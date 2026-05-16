@@ -1,0 +1,410 @@
+/* =============================================================================
+   MERIDIAN POOLS — global.css
+   MigsFlow Web Design
+   
+   TABLE OF CONTENTS
+   01. Font Declarations
+   02. Design Tokens (CSS Variables)
+   03. Base Reset
+   04. Typography Scale
+   05. Layout Utilities
+   06. Spacing Utilities
+   07. Accessibility
+   ============================================================================= */
+
+
+/* =============================================================================
+   01 — FONT DECLARATIONS
+   Locally hosted for max page speed (no Google Fonts CDN render blocking)
+   Source files live in /fonts/
+============================================================================= */
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* inter-italic - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-italic.woff2') format('woff2');
+}
+
+/* inter-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* inter-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v20-latin-700.woff2') format('woff2');
+}
+
+/* bebas-neue-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/bebas-neue-v16-latin-regular.woff2') format('woff2');
+}
+
+
+/* =============================================================================
+   02 — DESIGN TOKENS
+   Single source of truth for all colors, fonts, spacing, and radii.
+   Change a value here and it updates everywhere on the site.
+============================================================================= */
+
+:root {
+
+  /* ── Text Colors ─────────────────────────────────────────────────────────── */
+  --text-100: #002E5C;   /* dark navy — primary heading color                  */
+  --text-200: #000000;   /* black — strong body text                           */
+  --text-300: #056BF0;   /* light blue — links, eyebrow tags, accents          */
+  --text-400: #FFFFFF;   /* white — text on dark backgrounds                   */
+  --text-500: rgba(255, 255, 255, 0.70); /* white ghost — muted text on dark  */
+  --text-600: #2C2C2C;   /* oxford blue — standard body copy                  */
+  --text-700: #3A3A3A;   /* light grey — secondary / supporting body copy      */
+
+  /* ── Background Colors ───────────────────────────────────────────────────── */
+  --bg-100: #FFFFFF;                     /* white — default page background    */
+  --bg-200: #2C2C2C;                     /* oxford blue — dark section bg      */
+  --bg-300: #F8FBFF;                     /* light blue tint — subtle section   */
+  --bg-400: #09162D;                     /* navy — deepest dark bg (footer)    */
+  --bg-500: rgba(219, 237, 255, 0.68);   /* lighter blue — card/tag bg         */
+  --bg-600: #002E5C;                     /* oxford blue color    */
+  --bg-700: rgba(42, 134, 255, 0.20);
+
+  /* ── Brand / Action Colors ───────────────────────────────────────────────── */
+  --blue:          #056BF0;   /* primary CTA blue                              */
+  --blue-hover:    #0457C8;   /* primary blue darkened ~10% for hover          */
+  --blue-tint:     rgba(5, 107, 240, 0.12); /* ghost-light button fill        */
+  --navy:          #09162D;   /* deepest brand navy                            */
+  --white:         #FFFFFF;
+
+  /* ── Font Families ───────────────────────────────────────────────────────── */
+  --font-heading: 'Bebas Neue', Arial, sans-serif;
+  /* Arial fallback minimises CLS — closest system match for Bebas Neue caps  */
+
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  /* system-ui fallback minimises CLS for Inter body copy                     */
+
+  /* ── Heading Scale (clamp: mobile min → fluid → desktop max) ─────────────
+     Formula:  clamp(min-size, preferred-vw, max-size)
+     All units in rem. 1rem = 16px (browser default).
+     Bebas Neue is display-only — letter-spacing applied globally below.
+  ─────────────────────────────────────────────────────────────────────────── */
+  --fs-h1: clamp(2.75rem, 6vw, 5rem);     /* 44px → 80px  */
+  --fs-h2: clamp(2.25rem, 4.5vw, 3.5rem); /* 36px → 56px  */
+  --fs-h3: clamp(1.75rem, 3vw, 2.5rem);   /* 28px → 40px  */
+  --fs-h4: clamp(1.375rem, 2vw, 1.875rem);/* 22px → 30px  */
+  --fs-h5: clamp(1.125rem, 1.5vw, 1.5rem);/* 18px → 24px  */
+  --fs-h6: clamp(1rem, 1.25vw, 1.25rem);  /* 16px → 20px  */
+
+  /* ── Body / UI Font Sizes ────────────────────────────────────────────────── */
+  --fs-body-lg:  .95rem;  /* 18px — lead paragraphs, hero subtext            */
+  --fs-body:     1rem;      /* 16px — standard body copy                       */
+  --fs-body-sm:  0.9375rem; /* 15px — supporting copy, card text               */
+  --fs-caption:  0.875rem;  /* 14px — captions, fine print                     */
+  --fs-eyebrow:  0.8125rem; /* 13px — eyebrow / section label tags             */
+  --fs-btn:      1rem;      /* 16px — button label text                        */
+
+  /* ── Line Heights ────────────────────────────────────────────────────────── */
+  --lh-heading: 1.1;   /* tight — suits Bebas Neue display headings            */
+  --lh-body:    1.65;  /* comfortable reading line height for Inter            */
+  --lh-ui:      1.2;   /* buttons, labels, nav items                           */
+
+  /* ── Letter Spacing ──────────────────────────────────────────────────────── */
+  --ls-heading: 0.02em;  /* subtle tracking for Bebas Neue                     */
+  --ls-eyebrow: 0.1em;   /* wider tracking for small eyebrow labels            */
+  --ls-body:    0em;     /* no tracking on Inter body copy                     */
+
+  /* ── Spacing Scale ───────────────────────────────────────────────────────── */
+  --space-2xs: 0.25rem;   /*  4px */
+  --space-xs:  0.5rem;    /*  8px */
+  --space-sm:  0.75rem;   /* 12px */
+  --space-md:  1rem;      /* 16px */
+  --space-lg:  1.5rem;    /* 24px */
+  --space-xl:  2rem;      /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4rem;      /* 64px */
+  --space-4xl: 6rem;      /* 96px */
+  --space-5xl: 8rem;      /* 128px */
+
+  /* ── Section Padding ─────────────────────────────────────────────────────── */
+  --section-padding: clamp(2rem, 8vw, 4rem); /* responsive top/bottom padding  */
+
+  /* ── Border Radius ───────────────────────────────────────────────────────── */
+  --radius-card: 15px;    /* all cards                                         */
+  --radius-btn:  0px;     /* buttons — no border radius per design             */
+  --radius-tag:  4px;     /* small pill tags / eyebrow badges                  */
+  --radius-input: 4px;    /* form inputs                                       */
+
+  /* ── Shadows ─────────────────────────────────────────────────────────────── */
+  --shadow-card: 0 4px 24px rgba(9, 22, 45, 0.08);
+  --shadow-card-hover: 0 8px 32px rgba(9, 22, 45, 0.14);
+  --shadow-btn:  0 2px 12px rgba(5, 107, 240, 0.25);
+
+  /* ── Transitions ─────────────────────────────────────────────────────────── */
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.4s ease;
+
+  /* ── Layout ──────────────────────────────────────────────────────────────── */
+  --container-max: 1500px;
+  --container-padding: clamp(1rem, 4vw, 2rem); /* responsive horizontal gutter */
+}
+
+
+/* =============================================================================
+   03 — BASE RESET
+   Minimal, modern reset. No third-party libraries needed.
+============================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* prevent font scaling on orientation change */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  color: var(--text-600);
+  background-color: var(--bg-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+/* =============================================================================
+   04 — TYPOGRAPHY SCALE
+   Heading sizes are defined once here via CSS variables.
+   Every h1–h6 on every page automatically uses the correct size.
+   To override for a specific component, use a class in components.css.
+============================================================================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;            /* Bebas Neue is a single-weight display font   */
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+  color: var(--text-100);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-h5); }
+h6 { font-size: var(--fs-h6); }
+
+/* Headings on dark backgrounds inherit white from parent section */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--text-400);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-600);
+  max-width: 65ch; /* prevents over-long line lengths for readability          */
+}
+
+/* Lead paragraph — used for hero subtext and section intros */
+p.lead {
+  font-size: var(--fs-body-lg);
+  color: var(--text-700);
+}
+
+/* Eyebrow label — small tag above section headings */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-300);
+}
+
+/* Eyebrow on dark backgrounds */
+.dark .eyebrow {
+  color: var(--text-300);
+}
+
+
+/* =============================================================================
+   05 — LAYOUT UTILITIES
+   Reusable layout helpers used across every page.
+============================================================================= */
+
+/* Main container — centers content and applies responsive horizontal padding */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* Standard section vertical padding */
+.section-padding {
+  padding-block: var(--section-padding);
+}
+
+/* Dark section modifier — apply to <section> elements with dark backgrounds  */
+.dark {
+  background-color: var(--bg-400);
+  color: var(--text-400);
+}
+
+/* Oxford-blue section modifier */
+.dark-mid {
+  background-color: var(--bg-200);
+  color: var(--text-400);
+}
+
+/* Light blue tint section modifier */
+.light-tint {
+  background-color: var(--bg-300);
+}
+
+/* Flex utilities */
+.flex        { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between{ display: flex; align-items: center; justify-content: space-between; }
+.flex-col    { display: flex; flex-direction: column; }
+
+/* Grid utilities */
+.grid { display: grid; }
+
+
+/* =============================================================================
+   06 — SPACING UTILITIES
+   Margin/padding helpers for quick one-off adjustments without writing new CSS.
+============================================================================= */
+
+.mt-sm  { margin-top: var(--space-sm); }
+.mt-md  { margin-top: var(--space-md); }
+.mt-lg  { margin-top: var(--space-lg); }
+.mt-xl  { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+
+.mb-sm  { margin-bottom: var(--space-sm); }
+.mb-md  { margin-bottom: var(--space-md); }
+.mb-lg  { margin-bottom: var(--space-lg); }
+.mb-xl  { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+
+.gap-sm  { gap: var(--space-sm); }
+.gap-md  { gap: var(--space-md); }
+.gap-lg  { gap: var(--space-lg); }
+.gap-xl  { gap: var(--space-xl); }
+
+
+/* =============================================================================
+   07 — ACCESSIBILITY
+   Focus styles, screen reader utilities, reduced motion.
+============================================================================= */
+
+/* Visible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* Screen reader only — visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian Pools — Houston's luxury custom pool builder. We design and build fully custom gunite pools tailored to your home and lifestyle.">
+
+  <title>Meridian Pools | Houston's Luxury Custom Pool Builder</title>
+
+  <!-- =====================================================================
+     PRELOAD — Critical assets loaded first for best LCP/FCP scores
+     Per CodeStitch page speed handbook: preload above-the-fold images + fonts
+  ====================================================================== -->
+
+  <!-- Preload hero background images (above the fold — never lazy load) -->
+  <link rel="preload" as="image" href="images/backgrounds/hero-m.webp"
+        media="(max-width: 600px)">
+  <link rel="preload" as="image" href="images/backgrounds/hero.webp"
+        media="(min-width: 601px)">
+
+  <!-- Preload critical fonts (only weights used above the fold) -->
+  <link rel="preload" href="fonts/bebas-neue-v16-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-v20-latin-700.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-v20-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+  <!-- =====================================================================
+     CSS — Load order matters:
+     1. global.css   — tokens, reset, typography, layout
+     2. components.css — nav, footer, buttons, page hero
+     3. animations.css — keyframes + reveal utilities
+     4. styles.css   — homepage-specific styles only
+  ====================================================================== -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+  <!-- =====================================================================
+     TOPBAR
+     Hidden on mobile via components.css media query
+  ====================================================================== -->
+  <div id="topbar">
+    <div class="container topbar-inner">
+
+      <div class="topbar-info">
+        <!-- Hours -->
+        <span class="topbar-item">
+          <!-- Clock icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" d="M12 6v6l4 2"/>
+          </svg>
+          Sun - Fri (7:00 - 18:00)
+        </span>
+
+        <!-- Phone -->
+        <span class="topbar-item">
+          <!-- Phone icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M2.25 6.338c0-.414.336-.75.75-.75h2.25a.75.75 0 0 1 .743.647l.63 4.2a.75.75 0 0 1-.44.813l-1.27.508a11.25 11.25 0 0 0 5.38 5.38l.508-1.27a.75.75 0 0 1 .814-.44l4.2.63a.75.75 0 0 1 .647.743V18a.75.75 0 0 1-.75.75C9.716 18.75 2.25 11.284 2.25 6.338Z"/>
+          </svg>
+          <a href="tel:+18323456789">+1 832-345-6789</a>
+        </span>
+
+        <!-- Address -->
+        <span class="topbar-item">
+          <!-- Pin icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
+          </svg>
+          <a href="https://maps.google.com" target="_blank" rel="noopener">
+            22 Random Street, Houston, TX 77089
+          </a>
+        </span>
+      </div>
+
+      <!-- Social icons -->
+      <div class="topbar-social">
+        <a href="#" aria-label="Twitter / X">
+          <!-- X / Twitter icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="X">
+          <!-- Second X icon slot — replace with actual platform if needed -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <!-- Facebook icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <!-- /TOPBAR -->
+
+
+  <!-- =====================================================================
+     NAVIGATION
+  ====================================================================== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo" aria-label="Meridian Pools — Home">
+        MERIDIAN POOLS
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+
+          <!-- Services dropdown -->
+          <li>
+            <button class="nav-drop-toggle" aria-expanded="false"
+                    aria-haspopup="true">
+              Services
+              <!-- Chevron icon -->
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none">
+                <a href="services/custom-builds.html" role="menuitem">
+                  Custom Pool Construction
+                </a>
+              </li>
+              <li role="none">
+                <a href="services/renovations.html" role="menuitem">
+                  Remodeling &amp; Renovation
+                </a>
+              </li>
+              <li role="none">
+                <a href="services/add-ons.html" role="menuitem">
+                  Luxury Features &amp; Add-Ons
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="nav-cta">
+        <a href="quote.html" class="btn-primary">
+          Get Quote
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="nav-hamburger" aria-expanded="false"
+              aria-label="Open menu" aria-controls="mobile-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile drawer -->
+      <nav class="nav-drawer" id="mobile-drawer" aria-label="Mobile navigation">
+
+        <!-- Close button — top right of drawer -->
+        <button class="nav-drawer-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <ul>
+          <li><a href="about.html">About</a></li>
+
+          <!-- Services accordion -->
+          <li>
+            <button class="nav-drop-toggle" aria-expanded="false">
+              Services
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-sub">
+              <li><a href="services/custom-builds.html">Custom Pool Construction</a></li>
+              <li><a href="services/renovations.html">Remodeling &amp; Renovation</a></li>
+              <li><a href="services/add-ons.html">Luxury Features &amp; Add-Ons</a></li>
+            </ul>
+          </li>
+
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-drawer-cta">
+          <a href="quote.html" class="btn-primary">
+            Get Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main>
+
+    <!-- ==================================================================
+       HERO SECTION
+       Full-width background image, dark overlay, left-aligned content,
+       review card top-right with stacked ghost block behind it.
+       Trust bar / marquee at bottom.
+    =================================================================== -->
+    <section id="hero">
+
+      <!-- Hero content -->
+      <div class="container hero-inner">
+
+        <!-- Left: text + buttons -->
+        <div class="hero-content reveal fade-right">
+
+          <!-- Eyebrow tag -->
+          <p class="hero-eyebrow">Houston's Luxury Pool Builder</p>
+
+          <h1 class="hero-heading">
+            Your Backyard Deserves More Than a Generic Pool
+          </h1>
+
+          <p class="hero-body">
+            We design and build fully custom gunite pools for homeowners
+            who want something built right the first time. From resort-style
+            outdoor living to clean modern designs, every project is tailored
+            to your home, your lifestyle, and the way your family actually lives.
+          </p>
+
+          <div class="hero-btns">
+            <a href="gallery.html" class="btn-primary">
+              View Our Work
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </a>
+            <a href="quote.html" class="btn-ghost-dark">
+              Get a Free Estimate
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Pricing note -->
+          <p class="hero-pricing-note">
+            <em>Custom projects typically start around $80k+ · Financing Available</em>
+          </p>
+
+        </div>
+        <!-- /hero-content -->
+
+        <!-- Right: review card + ghost block -->
+        <div class="hero-card-wrap reveal fade-left delay-2">
+
+          <!-- Ghost block — sits behind and offset up/right -->
+          <div class="hero-card-ghost" aria-hidden="true"></div>
+
+          <!-- Review card -->
+          <div class="hero-card">
+
+            <!-- Video thumbnail with play overlay -->
+            <div class="hero-card-video">
+              <picture>
+                <!-- Mobile crop -->
+                <source media="(max-width: 600px)"
+                        srcset="images/headshots/owner-m.webp">
+                <!-- Desktop -->
+                <source media="(min-width: 601px)"
+                        srcset="images/headshots/owner.webp">
+                <img
+                  src="images/headshots/owner.jpg"
+                  alt="Meridian Pools owner"
+                  width="220"
+                  height="220"
+                  loading="eager"
+                  decoding="async">
+              </picture>
+              <!-- Play button overlay (decorative for now) -->
+              <div class="hero-card-play" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <!-- /video thumbnail -->
+
+            <!-- Card info -->
+            <div class="hero-card-info">
+
+              <!-- 5 stars -->
+              <div class="hero-card-stars" aria-label="5 out of 5 stars">
+                <!-- Star SVG repeated 5x -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+              </div>
+
+              <!-- Stacked client avatars (placeholders) -->
+              <div class="hero-card-avatars" aria-label="Happy clients">
+                <div class="avatar-placeholder"></div>
+                <div class="avatar-placeholder"></div>
+                <div class="avatar-placeholder"></div>
+              </div>
+
+              <!-- Stat -->
+              <p class="hero-card-stat">
+                <strong>300+ Projects</strong><br>Completed
+              </p>
+
+            </div>
+            <!-- /card info -->
+
+          </div>
+          <!-- /hero-card -->
+
+        </div>
+        <!-- /hero-card-wrap -->
+
+      </div>
+      <!-- /hero-inner -->
+
+      <!-- Hero background image (CodeStitch method — NOT lazy loaded, above fold) -->
+      <picture class="hero-bg">
+        <!-- Mobile: center-cropped for portrait screens -->
+        <source media="(max-width: 600px)"
+                srcset="images/backgrounds/hero-m.webp">
+        <!-- Desktop -->
+        <source media="(min-width: 601px)"
+                srcset="images/backgrounds/hero.webp">
+        <img
+          aria-hidden="true"
+          src="images/backgrounds/hero.jpg"
+          alt=""
+          width="1920"
+          height="900"
+          decoding="async">
+          <!-- No loading="lazy" — this is above the fold -->
+      </picture>
+
+    </section>
+    <!-- /HERO -->
+
+
+    <!-- ==================================================================
+       TRUST BAR / MARQUEE
+       Infinite left-to-right scrolling logo strip.
+       Pure CSS animation — no JS needed.
+       Single row on all screen sizes.
+    =================================================================== -->
+    <section id="trust-bar" aria-label="Trusted partners and certifications">
+      <div class="trust-track-wrap">
+        <!--
+          Two identical sets of logos side by side.
+          When the first set scrolls fully out of view, the second
+          seamlessly takes its place — creating an infinite loop.
+          Duplicate this inner div if you add more logos.
+        -->
+        <div class="trust-track">
+
+          <!-- Set 1 -->
+          <div class="trust-item">
+            <!-- Replace src with actual logo path when available -->
+            <img
+              src="images/logos/jacobs-co.svg"
+              alt="Jacobs & Co."
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <div class="trust-item">
+            <img
+              src="images/logos/worldwide-construction.svg"
+              alt="Worldwide Construction"
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <div class="trust-item">
+            <img
+              src="images/logos/jacobs-co.svg"
+              alt="Jacobs & Co."
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <div class="trust-item">
+            <img
+              src="images/logos/worldwide-construction.svg"
+              alt="Worldwide Construction"
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+
+          <!-- Set 2 — exact duplicate for seamless loop -->
+          <div class="trust-item">
+            <img
+              src="images/logos/jacobs-co.svg"
+              alt="Jacobs & Co."
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <div class="trust-item">
+            <img
+              src="images/logos/worldwide-construction.svg"
+              alt="Worldwide Construction"
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <div class="trust-item">
+            <img
+              src="images/logos/jacobs-co.svg"
+              alt="Jacobs & Co."
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <div class="trust-item">
+            <img
+              src="images/logos/worldwide-construction.svg"
+              alt="Worldwide Construction"
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async">
+          </div>
+
+        </div>
+        <!-- /trust-track -->
+      </div>
+    </section>
+    <!-- /TRUST BAR -->
+
+
+    <!-- ==================================================================
+       ABOUT SECTION
+       Two-column: image + stat overlay left, content right.
+       White background, standard section padding.
+    =================================================================== -->
+    <section id="about" class="section-padding">
+      <div class="container about-inner">
+
+        <!-- Left column — image + overlays -->
+        <div class="about-img-col reveal fade-right">
+
+          <!-- Main pool image -->
+          <div class="about-img-wrap">
+            <picture>
+              <source media="(max-width: 600px)"
+                      srcset="images/assets/about-pool-m.webp">
+              <source media="(min-width: 601px)"
+                      srcset="images/assets/about-pool.webp">
+              <img
+                src="images/assets/about-pool.jpg"
+                alt="Custom gunite pool built by Meridian Pools"
+                width="640"
+                height="520"
+                loading="lazy"
+                decoding="async">
+            </picture>
+
+            <!-- Stat overlay — bottom left of image -->
+            <div class="about-stat-card">
+              <div class="about-stat-top">
+                <p class="about-stat-number">120+</p>
+                <!-- Stacked avatar placeholders -->
+                <div class="about-stat-avatars">
+                  <div class="avatar-placeholder"></div>
+                  <div class="avatar-placeholder"></div>
+                  <div class="avatar-placeholder"></div>
+                  <div class="avatar-placeholder"></div>
+                </div>
+              </div>
+              <p class="about-stat-label">Satisfied Clients</p>
+            </div>
+
+          </div>
+          <!-- /about-img-wrap -->
+
+          <!-- Bottom bar — rating + tagline -->
+          <div class="about-rating-bar">
+            <div class="about-rating-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2 2.22z"/>
+              </svg>
+            </div>
+            <p class="about-rating-text">
+              From vision to structure —
+              <a href="about.html">Where Creativity Meets Construction Excellence</a>
+            </p>
+            <div class="about-rating-score">
+              <span class="about-rating-num">4.9/5</span>
+              <div class="about-rating-stars" aria-label="4.9 out of 5 stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <span class="about-rating-count">Our 500+ Reviews</span>
+            </div>
+          </div>
+          <!-- /about-rating-bar -->
+
+        </div>
+        <!-- /about-img-col -->
+
+
+        <!-- Right column — text content -->
+        <div class="about-content reveal fade-left">
+
+          <!-- Eyebrow -->
+          <p class="about-eyebrow eyebrow">About Us</p>
+
+          <h2>Designed Around Your Families Lifestyle</h2>
+
+          <p class="about-body">
+            We create custom pools and outdoor spaces that feel intentional,
+            timeless, and built for real life. From modern geometric designs to
+            resort-style backyard retreats, every project is tailored to the home,
+            the lifestyle, and the people using it.
+          </p>
+
+          <!-- Feature cards row -->
+          <div class="about-features">
+
+            <div class="about-feature-card">
+              <!-- Icon -->
+              <div class="about-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/>
+                </svg>
+              </div>
+              <div>
+                <h5>Built to Last</h5>
+                <p>Premium gunite construction, experienced craftsmanship, and
+                  materials selected for long-term durability.</p>
+              </div>
+            </div>
+
+            <div class="about-feature-card">
+              <!-- Icon -->
+              <div class="about-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+                </svg>
+              </div>
+              <div>
+                <h5>Designed With Purpose</h5>
+                <p>Every layout is carefully planned around flow, functionality,
+                  entertaining, and everyday family living.</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- /about-features -->
+
+          <!-- Bullet list + video — bottom row -->
+          <div class="about-bottom-row">
+
+            <!-- Bullet list -->
+            <ul class="about-list">
+              <li>Fully custom pool &amp; outdoor living designs</li>
+              <li>Clear communication from start to finish</li>
+              <li>Luxury-focused materials and modern finishes</li>
+            </ul>
+
+            <!-- Video thumbnail -->
+            <div class="about-video img-zoom">
+              <picture>
+                <source media="(max-width: 600px)"
+                        srcset="images/assets/about-video-m.webp">
+                <source media="(min-width: 601px)"
+                        srcset="images/assets/about-video.webp">
+                <img
+                  src="images/assets/about-video.jpg"
+                  alt="Meridian Pools construction process"
+                  width="340"
+                  height="200"
+                  loading="lazy"
+                  decoding="async">
+              </picture>
+              <!-- Play overlay (decorative for now) -->
+              <div class="about-video-play" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+          <!-- /about-bottom-row -->
+
+          <!-- CTA button -->
+          <a href="contact.html" class="btn-primary">
+            Schedule Consultation
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+
+        </div>
+        <!-- /about-content -->
+
+      </div>
+    </section>
+    <!-- /ABOUT -->
+
+    <!-- ==================================================================
+   CTA 1 — DREAM BACKYARD
+   Full-width background image, dark overlay, centered content.
+    =================================================================== -->
+    <section id="cta-1">
+        <div class="container cta1-inner reveal fade-up">
+
+            <h2>Your Dream Backyard Starts With One Conversation.</h2>
+
+            <p class="cta1-body">
+            No pressure. No sales pitch. Just a free consultation where we look
+            at your space, listen to what you want, and tell you exactly what's possible.
+            </p>
+
+            <div class="cta1-btns">
+            <a href="services/custom-builds.html" class="btn-primary">
+                View Services
+                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+            </a>
+            <a href="gallery.html" class="btn-ghost-dark">
+                View Work
+                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+            </a>
+            </div>
+
+        </div>
+
+        <!-- Background image (CodeStitch lazy-load method) -->
+        <picture class="cta1-bg">
+            <source media="(max-width: 600px)"
+                    srcset="images/backgrounds/cta1-m.webp">
+            <source media="(min-width: 601px)"
+                    srcset="images/backgrounds/cta1.webp">
+            <img
+            aria-hidden="true"
+            src="images/backgrounds/cta1.jpg"
+            alt=""
+            width="1920"
+            height="700"
+            loading="lazy"
+            decoding="async">
+        </picture>
+    </section>
+    <!-- /CTA 1 -->    
+
+        
+<!-- ==================================================================
+   SERVICES SECTION
+=================================================================== -->
+<section id="services" class="section-padding">
+  <div class="container">
+
+    <!-- Section header + nav buttons row -->
+    <div class="services-top reveal fade-up">
+      <div class="services-header">
+        <p class="eyebrow">Our Services</p>
+        <h2>What We Build</h2>
+        <p class="services-subtext">
+          From modern geometric pools to full resort-style backyard
+          transformations, we design spaces that blend luxury,
+          functionality, and long-term craftsmanship.
+        </p>
+      </div>
+    </div>
+
+    <!-- Carousel track wrapper -->
+    <div class="services-carousel-wrap">
+      <div class="services-track" id="servicesTrack">
+
+        <!-- Card 1 -->
+        <div class="service-card reveal fade-up delay-1">
+          <div class="service-card-img img-zoom">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/services/custom-builds-m.webp">
+              <source media="(min-width: 601px)" srcset="images/services/custom-builds.webp">
+              <img src="images/services/custom-builds.jpg"
+                   alt="Custom pool construction"
+                   width="480" height="380"
+                   loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="service-card-label">
+            <h4>Custom Pool Construction</h4>
+            <a href="services/custom-builds.html" class="service-learn-more">
+              <span class="service-learn-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+              </span>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card reveal fade-up delay-2">
+          <div class="service-card-img img-zoom">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/services/renovations-m.webp">
+              <source media="(min-width: 601px)" srcset="images/services/renovations.webp">
+              <img src="images/services/renovations.jpg"
+                   alt="Pool remodeling and renovation"
+                   width="480" height="380"
+                   loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="service-card-label">
+            <h4>Remodeling &amp; Renovation</h4>
+            <a href="services/renovations.html" class="service-learn-more">
+              <span class="service-learn-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+              </span>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card reveal fade-up delay-3">
+          <div class="service-card-img img-zoom">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/services/add-ons-m.webp">
+              <source media="(min-width: 601px)" srcset="images/services/add-ons.webp">
+              <img src="images/services/add-ons.jpg"
+                   alt="Luxury pool features and add-ons"
+                   width="480" height="380"
+                   loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="service-card-label">
+            <h4>Luxury Features &amp; Upgrades</h4>
+            <a href="services/add-ons.html" class="service-learn-more">
+              <span class="service-learn-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+              </span>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /carousel -->
+      <!-- Prev / Next buttons -->
+      <div class="services-nav">
+        <button class="services-nav-btn" id="servicesPrev" aria-label="Previous service">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button class="services-nav-btn" id="servicesNext" aria-label="Next service">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>     
+
+  </div>
+</section>
+<!-- /SERVICES -->
+
+
+<!-- ==================================================================
+   PROCESS SECTION
+   Auto-scrolling carousel, fades on edges, 4 steps.
+=================================================================== -->
+<section id="process" class="section-padding">
+  <div class="container">
+    <div class="process-header reveal fade-up">
+      <p class="eyebrow">Our Process</p>
+    </div>
+  </div>
+
+  <!-- Full-width carousel — outside container so fade edges reach screen edge -->
+  <div class="process-carousel-wrap">
+
+    <!-- Left/right fade overlays -->
+    <div class="process-fade process-fade-left" aria-hidden="true"></div>
+    <div class="process-fade process-fade-right" aria-hidden="true"></div>
+
+    <!-- Scrolling track -->
+    <div class="process-track" id="processTrack">
+
+      <!-- Step 1 -->
+      <div class="process-card">
+        <span class="process-num" aria-hidden="true">01</span>
+        <h3>Free Consultation</h3>
+        <p>We assess your space, listen to what you want, and tell you
+          exactly what's possible. No obligation, no pressure.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="process-card">
+        <span class="process-num" aria-hidden="true">02</span>
+        <h3>Custom Design</h3>
+        <p>We design your pool from scratch and show you a 3D rendering
+          before anything is approved. You sign off only when it looks right.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="process-card">
+        <span class="process-num" aria-hidden="true">03</span>
+        <h3>Construction</h3>
+        <p>Our licensed crew handles everything from excavation to equipment
+          installation. We keep you updated at every milestone.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="process-card">
+        <span class="process-num" aria-hidden="true">04</span>
+        <h3>Final Walkthrough</h3>
+        <p>We walk you through every system before we hand over the keys.
+          Then you jump in.</p>
+      </div>
+
+      <!-- Duplicates for seamless loop -->
+      <div class="process-card" aria-hidden="true">
+        <span class="process-num" aria-hidden="true">01</span>
+        <h3>Free Consultation</h3>
+        <p>We assess your space, listen to what you want, and tell you
+          exactly what's possible. No obligation, no pressure.</p>
+      </div>
+
+      <div class="process-card" aria-hidden="true">
+        <span class="process-num" aria-hidden="true">02</span>
+        <h3>Custom Design</h3>
+        <p>We design your pool from scratch and show you a 3D rendering
+          before anything is approved. You sign off only when it looks right.</p>
+      </div>
+
+      <div class="process-card" aria-hidden="true">
+        <span class="process-num" aria-hidden="true">03</span>
+        <h3>Construction</h3>
+        <p>Our licensed crew handles everything from excavation to equipment
+          installation. We keep you updated at every milestone.</p>
+      </div>
+
+      <div class="process-card" aria-hidden="true">
+        <span class="process-num" aria-hidden="true">04</span>
+        <h3>Final Walkthrough</h3>
+        <p>We walk you through every system before we hand over the keys.
+          Then you jump in.</p>
+      </div>
+
+    </div>
+    <!-- /process-track -->
+
+  </div>
+  <!-- /process-carousel-wrap -->
+
+</section>
+<!-- /PROCESS -->
+
+
+<!-- ==================================================================
+   PROJECTS SECTION
+   Two-col header, filter tabs, 3-col image grid with lightbox.
+=================================================================== -->
+<section id="projects" class="section-padding">
+  <div class="container">
+
+    <!-- Header row -->
+    <div class="projects-header reveal fade-up">
+      <div class="projects-header-left">
+        <p class="eyebrow projects-eyebrow">Our Projects</p>
+        <h2>Real Pools. Real Backyards.</h2>
+      </div>
+      <div class="projects-header-right">
+        <p class="projects-sub">
+          Every project here was built from scratch for a real Houston
+          homeowner. Browse by service type to find work that matches
+          what you have in mind.
+        </p>
+        <a href="gallery.html" class="btn-primary">
+          View Gallery
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="projects-filters reveal fade-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <span class="filter-dot" aria-hidden="true"></span>
+      <button class="filter-btn" data-filter="custom">Custom Pool Construction</button>
+      <span class="filter-dot" aria-hidden="true"></span>
+      <button class="filter-btn" data-filter="renovation">Remodeling &amp; Renovation</button>
+      <span class="filter-dot" aria-hidden="true"></span>
+      <button class="filter-btn" data-filter="luxury">Luxury Features &amp; Upgrades</button>
+    </div>
+
+    <div class="projects-filter-line"></div>
+
+    <!-- Grid + nav buttons -->
+    <div class="projects-grid-wrap">
+
+      <!-- Project cards -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Card: All + Custom -->
+        <div class="project-card" data-category="custom"
+             data-img="images/assets/gallery/riverside-estate.jpg"
+             data-title="The Riverside Estate">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/riverside-estate-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/riverside-estate.webp">
+            <img src="images/assets/gallery/riverside-estate.jpg"
+                 alt="The Riverside Estate pool — Katy, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Riverside Estate</h4>
+            <p>Katy, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: All + Custom -->
+        <div class="project-card" data-category="custom"
+             data-img="images/assets/gallery/woodlands-retreat.jpg"
+             data-title="The Woodlands Retreat">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/woodlands-retreat-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/woodlands-retreat.webp">
+            <img src="images/assets/gallery/woodlands-retreat.jpg"
+                 alt="The Woodlands Retreat pool — Woodlands, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Woodlands Retreat</h4>
+            <p>Woodlands, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: All + Custom -->
+        <div class="project-card" data-category="custom"
+             data-img="images/assets/gallery/memorial-modern.jpg"
+             data-title="The Memorial Modern">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/memorial-modern-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/memorial-modern.webp">
+            <img src="images/assets/gallery/memorial-modern.jpg"
+                 alt="The Memorial Modern pool — Houston, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Memorial Modern</h4>
+            <p>Houston, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: Renovation -->
+        <div class="project-card" data-category="renovation"
+             data-img="images/assets/gallery/sugar-land-refresh.jpg"
+             data-title="The Sugar Land Refresh">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/sugar-land-refresh-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/sugar-land-refresh.webp">
+            <img src="images/assets/gallery/sugar-land-refresh.jpg"
+                 alt="The Sugar Land Refresh — Sugar Land, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Sugar Land Refresh</h4>
+            <p>Sugar Land, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: Renovation -->
+        <div class="project-card" data-category="renovation"
+             data-img="images/assets/gallery/pearland-revival.jpg"
+             data-title="The Pearland Revival">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/pearland-revival-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/pearland-revival.webp">
+            <img src="images/assets/gallery/pearland-revival.jpg"
+                 alt="The Pearland Revival — Pearland, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Pearland Revival</h4>
+            <p>Pearland, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: Renovation -->
+        <div class="project-card" data-category="renovation"
+             data-img="images/assets/gallery/cypress-classic.jpg"
+             data-title="The Cypress Classic">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/cypress-classic-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/cypress-classic.webp">
+            <img src="images/assets/gallery/cypress-classic.jpg"
+                 alt="The Cypress Classic — Cypress, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Cypress Classic</h4>
+            <p>Cypress, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: Luxury -->
+        <div class="project-card" data-category="luxury"
+             data-img="images/assets/gallery/tanglewood-oasis.jpg"
+             data-title="The Tanglewood Oasis">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/tanglewood-oasis-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/tanglewood-oasis.webp">
+            <img src="images/assets/gallery/tanglewood-oasis.jpg"
+                 alt="The Tanglewood Oasis — Houston, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Tanglewood Oasis</h4>
+            <p>Houston, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: Luxury -->
+        <div class="project-card" data-category="luxury"
+             data-img="images/assets/gallery/river-oaks-resort.jpg"
+             data-title="The River Oaks Resort">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/river-oaks-resort-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/river-oaks-resort.webp">
+            <img src="images/assets/gallery/river-oaks-resort.jpg"
+                 alt="The River Oaks Resort — Houston, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The River Oaks Resort</h4>
+            <p>Houston, TX</p>
+          </div>
+        </div>
+
+        <!-- Card: Luxury -->
+        <div class="project-card" data-category="luxury"
+             data-img="images/assets/gallery/spring-valley-spa.jpg"
+             data-title="The Spring Valley Spa">
+          <picture>
+            <source media="(max-width:600px)"
+                    srcset="images/assets/gallery/spring-valley-spa-m.webp">
+            <source media="(min-width:601px)"
+                    srcset="images/assets/gallery/spring-valley-spa.webp">
+            <img src="images/assets/gallery/spring-valley-spa.jpg"
+                 alt="The Spring Valley Spa — Spring Valley, TX"
+                 width="360" height="440"
+                 loading="lazy" decoding="async">
+          </picture>
+          <div class="project-card-overlay"></div>
+          <div class="project-card-info">
+            <h4>The Spring Valley Spa</h4>
+            <p>Spring Valley, TX</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- /projects-grid -->
+
+            <!-- Prev/Next (mobile only carousel) -->
+      <div class="projects-nav">
+        <button class="projects-nav-btn" id="projectsPrev" aria-label="Previous project">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button class="projects-nav-btn" id="projectsNext" aria-label="Next project">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- /PROJECTS -->
+
+<!-- ==================================================================
+   LIGHTBOX
+   Full screen overlay, closes on X or outside click.
+=================================================================== -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true"
+     aria-label="Project image viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="" loading="lazy" decoding="async">
+    <p id="lightboxCaption" class="lightbox-caption"></p>
+  </div>
+</div>
+
+
+
+<!-- ==================================================================
+   TESTIMONIALS SECTION
+   Full-width bg image, dark overlay, 2 testimonials side by side
+   on desktop, single card on mobile with prev/next arrows below.
+=================================================================== -->
+<section id="testimonials">
+
+  <!-- Background image -->
+  <picture class="testimonials-bg">
+    <source media="(max-width: 600px)"
+            srcset="images/backgrounds/testimonials-m.webp">
+    <source media="(min-width: 601px)"
+            srcset="images/backgrounds/testimonials.webp">
+    <img
+      aria-hidden="true"
+      src="images/backgrounds/testimonials.jpg"
+      alt=""
+      width="1920"
+      height="700"
+      loading="lazy"
+      decoding="async">
+  </picture>
+
+  <div class="container testimonials-inner">
+
+    <!-- Header -->
+    <div class="testimonials-header reveal fade-up">
+      <p class="eyebrow testimonials-eyebrow">Customer Reviews</p>
+      <h2>Kind Words From Our Clients</h2>
+    </div>
+
+    <!-- Carousel track -->
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <!-- Slide 1 — shows 2 cards -->
+        <div class="testimonials-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "Working with Meridian Pools was just a
+              <span class="highlight">smooth process</span>
+              from start to finish. We are so happy with the final result."
+            </blockquote>
+            <div class="testimonial-author">
+              <picture class="testimonial-avatar">
+                <source media="(max-width: 600px)"
+                        srcset="images/headshots/deon-w-m.webp">
+                <source media="(min-width: 601px)"
+                        srcset="images/headshots/deon-w.webp">
+                <img src="images/headshots/deon-w.jpg"
+                     alt="Deon W."
+                     width="52" height="52"
+                     loading="lazy" decoding="async">
+              </picture>
+              <div class="testimonial-author-info">
+                <p class="testimonial-name">Deon W.</p>
+                <p class="testimonial-location">Houston, TX</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "My family and I couldn't be more happy with our new pool! We
+              <span class="highlight">no longer avoid</span>
+              our backyard and gather together daily. I can't recommend
+              Meridian Pools enough!"
+            </blockquote>
+            <div class="testimonial-author">
+              <picture class="testimonial-avatar">
+                <source media="(max-width: 600px)"
+                        srcset="images/headshots/hannah-t-m.webp">
+                <source media="(min-width: 601px)"
+                        srcset="images/headshots/hannah-t.webp">
+                <img src="images/headshots/hannah-t.jpg"
+                     alt="Hannah T."
+                     width="52" height="52"
+                     loading="lazy" decoding="async">
+              </picture>
+              <div class="testimonial-author-info">
+                <p class="testimonial-name">Hannah T.</p>
+                <p class="testimonial-location">Houston, TX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /slide 1 -->
+
+        <!-- Slide 2 -->
+        <div class="testimonials-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "From the first call to the final walkthrough, every step was
+              <span class="highlight">handled professionally</span>.
+              Our backyard is now the envy of the neighborhood."
+            </blockquote>
+            <div class="testimonial-author">
+              <picture class="testimonial-avatar">
+                <source media="(max-width: 600px)"
+                        srcset="images/headshots/reviewer-3-m.webp">
+                <source media="(min-width: 601px)"
+                        srcset="images/headshots/reviewer-3.webp">
+                <img src="images/headshots/reviewer-3.jpg"
+                     alt="Marcus R."
+                     width="52" height="52"
+                     loading="lazy" decoding="async">
+              </picture>
+              <div class="testimonial-author-info">
+                <p class="testimonial-name">Marcus R.</p>
+                <p class="testimonial-location">Katy, TX</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "We interviewed three pool builders and Meridian was the
+              <span class="highlight">clear choice</span>.
+              The quality of work speaks for itself — worth every penny."
+            </blockquote>
+            <div class="testimonial-author">
+              <picture class="testimonial-avatar">
+                <source media="(max-width: 600px)"
+                        srcset="images/headshots/reviewer-4-m.webp">
+                <source media="(min-width: 601px)"
+                        srcset="images/headshots/reviewer-4.webp">
+                <img src="images/headshots/reviewer-4.jpg"
+                     alt="Lisa M."
+                     width="52" height="52"
+                     loading="lazy" decoding="async">
+              </picture>
+              <div class="testimonial-author-info">
+                <p class="testimonial-name">Lisa M.</p>
+                <p class="testimonial-location">The Woodlands, TX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /slide 2 -->
+
+        <!-- Slide 3 -->
+        <div class="testimonials-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "The team was on time, on budget, and the communication was
+              <span class="highlight">unlike anything</span>
+              I've experienced with a contractor. Truly exceptional."
+            </blockquote>
+            <div class="testimonial-author">
+              <picture class="testimonial-avatar">
+                <source media="(max-width: 600px)"
+                        srcset="images/headshots/reviewer-5-m.webp">
+                <source media="(min-width: 601px)"
+                        srcset="images/headshots/reviewer-5.webp">
+                <img src="images/headshots/reviewer-5.jpg"
+                     alt="James K."
+                     width="52" height="52"
+                     loading="lazy" decoding="async">
+              </picture>
+              <div class="testimonial-author-info">
+                <p class="testimonial-name">James K.</p>
+                <p class="testimonial-location">Sugar Land, TX</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "We couldn't be more thrilled. Our pool is
+              <span class="highlight">absolutely stunning</span>
+              and the whole experience was stress-free from day one."
+            </blockquote>
+            <div class="testimonial-author">
+              <picture class="testimonial-avatar">
+                <source media="(max-width: 600px)"
+                        srcset="images/headshots/reviewer-6-m.webp">
+                <source media="(min-width: 601px)"
+                        srcset="images/headshots/reviewer-6.webp">
+                <img src="images/headshots/reviewer-6.jpg"
+                     alt="Sandra P."
+                     width="52" height="52"
+                     loading="lazy" decoding="async">
+              </picture>
+              <div class="testimonial-author-info">
+                <p class="testimonial-name">Sandra P.</p>
+                <p class="testimonial-location">Pearland, TX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /slide 3 -->
+
+      </div>
+      <!-- /testimonials-track -->
+    </div>
+
+    <!-- Bottom bar — arrows + dots + divider + Google rating + CTA buttons -->
+    <div class="testimonials-bottom">
+
+      <!-- Left: arrows + dots -->
+      <div class="testimonials-controls">
+        <button class="testimonials-btn" id="testimonialsPrev"
+                aria-label="Previous testimonials">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button class="testimonials-btn" id="testimonialsNext"
+                aria-label="Next testimonials">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Pagination dots -->
+        <div class="testimonials-dots" id="testimonialsDots"
+             aria-label="Slide indicators">
+          <button class="testimonials-dot active" data-slide="0"
+                  aria-label="Slide 1"></button>
+          <button class="testimonials-dot" data-slide="1"
+                  aria-label="Slide 2"></button>
+          <button class="testimonials-dot" data-slide="2"
+                  aria-label="Slide 3"></button>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="testimonials-divider" aria-hidden="true"></div>
+
+      <!-- Google rating -->
+      <div class="testimonials-google">
+        <!-- Replace src with actual Google SVG when available -->
+        <img src="images/logos/google.svg"
+             alt="Google"
+             width="32" height="32"
+             loading="lazy" decoding="async"
+             class="google-logo-placeholder">
+        <div class="testimonials-google-info">
+          <div class="testimonials-google-stars" aria-label="4.9 out of 5 stars">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testimonials-google-score">4.9 | Google Reviews</p>
+        </div>
+      </div>
+
+      <!-- Right: CTA buttons -->
+      <div class="testimonials-ctas">
+        <a href="https://google.com" target="_blank" rel="noopener"
+           class="btn-ghost-dark">
+          Read Reviews
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+        <a href="https://google.com" target="_blank" rel="noopener"
+           class="btn-primary">
+          Leave a Review
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+    <!-- /testimonials-bottom -->
+
+  </div>
+</section>
+<!-- /TESTIMONIALS -->
+
+<!-- ==================================================================
+   FAQ SECTION
+   Centered header, accordion left, image right on desktop.
+   Stacks to single column on mobile.
+=================================================================== -->
+<section id="faq" class="section-padding">
+  <div class="container">
+
+    <!-- Header — centered on desktop, left on mobile -->
+    <div class="faq-header reveal fade-up">
+      <p class="eyebrow faq-eyebrow">FAQs</p>
+      <h2>Common Questions Homeowners Have</h2>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="faq-inner">
+
+    <!-- Left — accordion -->
+    <div class="faq-accordion" id="faqAccordion">
+
+    <!-- Item 1 -->
+    <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-icon" aria-hidden="true">
+            <img src="images/icons/faq-icon.svg" alt="" width="32" height="32"
+                loading="lazy" decoding="async">
+        </span>
+        <span class="faq-question">Can a pool actually increase my home's value?</span>
+        <span class="faq-chevron" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </span>
+        </button>
+        <div class="faq-body">
+        <p>Absolutely. Most homeowners don't realize their backyard is one of the highest-ROI investments they can make. A professionally designed custom pool can increase your home's value by 5–15% and transform how your family uses your outdoor space every single day.</p>
+        </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-icon" aria-hidden="true">
+            <img src="images/icons/faq-icon.svg" alt="" width="32" height="32"
+                loading="lazy" decoding="async">
+        </span>
+        <span class="faq-question">What makes a custom pool different from a standard one?</span>
+        <span class="faq-chevron" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </span>
+        </button>
+        <div class="faq-body">
+        <p>A custom pool is designed entirely around your home, your yard, and how your family actually lives — not pulled from a catalog. Every dimension, material, and feature is chosen specifically for you. The result is something that feels like it was always supposed to be there.</p>
+        </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-icon" aria-hidden="true">
+            <img src="images/icons/faq-icon.svg" alt="" width="32" height="32"
+                loading="lazy" decoding="async">
+        </span>
+        <span class="faq-question">How do I know if my pool needs a renovation or a full replacement?</span>
+        <span class="faq-chevron" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </span>
+        </button>
+        <div class="faq-body">
+        <p>Stained plaster, cracking coping, equipment that trips the breaker, a pump that sounds like it's working twice as hard as it used to — these aren't just annoyances, they're your pool telling you it's time. At some point patching the same problems every season <strong>costs more</strong> than starting fresh, and we'll tell you honestly which side of that line you're on.</p>
+        <a href="quote.html" class="btn-primary">
+            Get a Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>
+        </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-icon" aria-hidden="true">
+            <img src="images/icons/faq-icon.svg" alt="" width="32" height="32"
+                loading="lazy" decoding="async">
+        </span>
+        <span class="faq-question">How long does a custom pool build take?</span>
+        <span class="faq-chevron" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </span>
+        </button>
+        <div class="faq-body">
+        <p>Most custom gunite pools take between 10 and 16 weeks from permit approval to water in the pool. The exact timeline depends on the complexity of your design, weather, and permit processing in your city. We give you a clear schedule at the start and keep you updated at every milestone so there are never any surprises.</p>
+        </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-icon" aria-hidden="true">
+            <img src="images/icons/faq-icon.svg" alt="" width="32" height="32"
+                loading="lazy" decoding="async">
+        </span>
+        <span class="faq-question">What does a custom pool typically cost in Houston?</span>
+        <span class="faq-chevron" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </span>
+        </button>
+        <div class="faq-body">
+        <p>Our custom projects typically start around $80,000 and go up from there depending on size, features, and outdoor living additions. We offer financing options to make it easier to get started. The best way to get an accurate number is to fill out our quote form — we'll come out, look at your space, and give you a real number, not a ballpark.</p>
+        </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-icon" aria-hidden="true">
+            <img src="images/icons/faq-icon.svg" alt="" width="32" height="32"
+                loading="lazy" decoding="async">
+        </span>
+        <span class="faq-question">Do you handle permits and inspections?</span>
+        <span class="faq-chevron" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </span>
+        </button>
+        <div class="faq-body">
+        <p>Yes — completely. We handle all permits, inspections, and city approvals from start to finish. You don't need to make a single call to the city or show up for a single inspection. We manage the entire process so you can focus on picking out your tile and planning your first pool party.</p>
+        </div>
+    </div>
+
+    </div>
+    <!-- /faq-accordion -->
+
+      <!-- Right — image -->
+      <div class="faq-img-col reveal fade-left">
+        <picture class="faq-img-wrap">
+          <source media="(max-width: 600px)"
+                  srcset="images/assets/faq-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="images/assets/faq.webp">
+          <img
+            src="images/assets/faq.jpg"
+            alt="Meridian Pools team consulting with homeowners"
+            width="560"
+            height="680"
+            loading="lazy"
+            decoding="async">
+        </picture>
+      </div>
+
+    </div>
+    <!-- /faq-inner -->
+
+  </div>
+</section>
+<!-- /FAQ -->
+
+  </main>
+
+
+  <!-- =====================================================================
+     FOOTER
+  ====================================================================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1 — Brand -->
+        <div class="footer-col footer-brand">
+          <h4>Pages</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+            sit amet consectetur adipiscing elit quisque faucibus.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 — Pages -->
+        <div class="footer-col footer-nav">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services/custom-builds.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 — Contact -->
+        <div class="footer-col footer-contact">
+          <h4>Get In Touch</h4>
+          <address>
+            <p>12345 Random St Drive<br>Houston, TX</p>
+            <a href="tel:+18323451234">(832) 345-1234</a>
+            <a href="mailto:info@gmail.com">Info@gmail.com</a>
+          </address>
+        </div>
+
+        <!-- Col 4 — Newsletter -->
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>
+            Get the latest updates and offers for our services yearly.
+          </p>
+          <form class="footer-form" action="#" method="POST"
+                aria-label="Newsletter signup">
+            <label for="footer-email" class="sr-only">Email address</label>
+            <input
+              type="email"
+              id="footer-email"
+              name="email"
+              placeholder="Email your email"
+              autocomplete="email"
+              required>
+            <button type="submit" class="btn-primary">
+              Submit Now
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+      <!-- /footer-grid -->
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Meridian Pools. All rights reserved. Designed by MigsFlow Web Design.</p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+
+  <!-- =====================================================================
+     SCRIPTS
+     main.js deferred — loads after HTML is parsed, no render blocking.
+     Page-specific scripts loaded only on pages that need them.
+  ====================================================================== -->
+  <script defer src="js/main.js"></script>
+  <script defer src="js/calculator.js"></script>
+  <script defer src="js/accordion.js"></script>
+  <script defer src="js/gallery-filter.js"></script>  
+
+</body>
+</html>

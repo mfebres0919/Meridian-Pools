@@ -1,0 +1,881 @@
+/* =============================================================================
+   MERIDIAN POOLS — components.css
+   MigsFlow Web Design
+
+   Reusable UI components that appear on 2+ pages.
+   Requires global.css to be loaded first for all CSS variables.
+
+   TABLE OF CONTENTS
+   01. Buttons
+   02. Topbar
+   03. Navigation
+   04. Footer
+   05. Page Hero Banner (Service Pages)
+============================================================================= */
+
+
+/* =============================================================================
+   01 — BUTTONS
+   Three variants used across the entire site.
+
+   .btn-primary    → solid blue fill, white text
+   .btn-ghost-dark → transparent, white border + text (dark / image backgrounds)
+   .btn-ghost-light→ light blue tint fill, blue border + text (light backgrounds)
+
+   No border-radius on any button (--radius-btn: 0px).
+   Place arrow icon inside button as:
+   <svg class="btn-icon" aria-hidden="true"> ... </svg>
+============================================================================= */
+
+/* ── Shared base ─────────────────────────────────────────────────────────── */
+.btn-primary,
+.btn-ghost-dark,
+.btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  line-height: var(--lh-ui);
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-btn);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.btn-primary:hover,
+.btn-ghost-dark:hover,
+.btn-ghost-light:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary:active,
+.btn-ghost-dark:active,
+.btn-ghost-light:active {
+  transform: translateY(0);
+}
+
+/* ── .btn-primary ────────────────────────────────────────────────────────── */
+.btn-primary {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-hover);
+  border-color: var(--blue-hover);
+  box-shadow: var(--shadow-btn);
+}
+
+/* ── .btn-ghost-dark ─────────────────────────────────────────────────────── */
+.btn-ghost-dark {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
+}
+
+.btn-ghost-dark:hover {
+  border-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── .btn-ghost-light ────────────────────────────────────────────────────── */
+.btn-ghost-light {
+  background-color: var(--blue-tint);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-ghost-light:hover {
+  background-color: rgba(5, 107, 240, 0.20);
+  border-color: var(--blue-hover);
+  color: var(--blue-hover);
+}
+
+/* ── Button icon ─────────────────────────────────────────────────────────── */
+.btn-primary .btn-icon,
+.btn-ghost-dark .btn-icon,
+.btn-ghost-light .btn-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.btn-primary:hover .btn-icon,
+.btn-ghost-dark:hover .btn-icon,
+.btn-ghost-light:hover .btn-icon {
+  transform: translate(2px, -2px);
+}
+
+
+/* =============================================================================
+   02 — TOPBAR
+   Sits above the main navigation on every page.
+   Navy background, three info items centered, social icons pushed right.
+   Hides on mobile (below 768px) to preserve space.
+============================================================================= */
+
+#topbar {
+  background-color: var(--bg-400);
+  padding-block: 0.625rem; /* 10px top/bottom */
+}
+
+#topbar .topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+/* ── Info items (hours, phone, address) ─────────────────────────────────── */
+.topbar-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: 400;
+  color: var(--text-500); /* white ghost */
+  white-space: nowrap;
+}
+
+.topbar-item svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* Phone and address are clickable links */
+.topbar-item a {
+  color: var(--text-500);
+  transition: color var(--transition-base);
+}
+
+.topbar-item a:hover {
+  color: var(--text-400);
+}
+
+/* ── Social icons ────────────────────────────────────────────────────────── */
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.topbar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-400);
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.topbar-social a:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.topbar-social svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* ── Hide topbar on mobile ───────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #topbar {
+    display: none;
+  }
+}
+
+
+/* =============================================================================
+   03 — NAVIGATION
+   White background, sticky on scroll.
+   Logo (Bebas Neue) left, nav links center-left, Get Quote button far right.
+   Services link has a dropdown revealing 3 sub-pages.
+   Mobile: hamburger toggles a full-width drawer (JS handles open/close).
+============================================================================= */
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-100);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  /* Subtle shadow added via JS when page scrolls */
+  transition: box-shadow var(--transition-base);
+}
+
+#navbar.scrolled {
+  box-shadow: 0 2px 16px rgba(9, 22, 45, 0.10);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem; /* 72px nav height */
+}
+
+/* ── Logo ────────────────────────────────────────────────────────────────── */
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: var(--ls-heading);
+  color: var(--text-100);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-logo:hover {
+  color: var(--text-100); /* no color change on logo hover */
+}
+
+/* ── Nav links list ──────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links > li {
+  position: relative; /* anchor for dropdown */
+}
+
+.nav-links a,
+.nav-drop-toggle {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: var(--text-600);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color var(--transition-base);
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-drop-toggle:hover {
+  color: var(--blue);
+}
+
+/* Active page link */
+.nav-links a.active {
+  color: var(--blue);
+}
+
+/* ── Dropdown chevron icon ───────────────────────────────────────────────── */
+.nav-chevron {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+/* Rotates when dropdown is open — JS adds .open to parent <li> */
+.nav-links li.open .nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown menu ───────────────────────────────────────────────────────── */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 13rem;
+  background-color: var(--bg-100);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 32px rgba(9, 22, 45, 0.12);
+  list-style: none;
+  padding: var(--space-sm) 0;
+  margin: 0;
+
+  /* Hidden by default — JS toggles .open on parent <li> */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+/* Open state — JS adds .open to the parent <li> */
+.nav-links li.open .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: var(--text-600);
+  transition: background-color var(--transition-base), color var(--transition-base);
+  border-radius: 0;
+}
+
+.nav-dropdown li a:hover {
+  background-color: var(--bg-300);
+  color: var(--blue);
+}
+
+/* ── Nav CTA button ──────────────────────────────────────────────────────── */
+.nav-cta {
+  flex-shrink: 0;
+}
+
+/* Slightly smaller padding than full page buttons to fit nav height */
+.nav-cta .btn-primary {
+  padding: 0.625rem 1.25rem;
+  font-size: var(--fs-body-sm);
+}
+
+/* ── Hamburger button (mobile only) ─────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  flex-shrink: 0;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--text-100);
+  border-radius: 2px;
+  /* margin-block controls spacing — 3px each side = 8px between bar centres */
+  margin-block: 3px;
+  transition:
+    transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity   0.25s ease,
+    width     0.25s ease;
+  transform-origin: center;
+}
+
+/* Hamburger → X
+   Bar height 2px + margin-block 3px top + 3px bottom = 8px between centres.
+   translateY(8px) aligns top/bottom bars perfectly at centre. */
+#navbar.menu-open .nav-hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#navbar.menu-open .nav-hamburger span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+#navbar.menu-open .nav-hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ── Mobile drawer ───────────────────────────────────────────────────────── */
+.nav-drawer {
+  display: none; /* block on mobile — see media query below */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: var(--bg-100);
+  padding: 5rem var(--container-padding) var(--space-2xl);
+  overflow-y: auto;
+
+  /* Slide in from right */
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+/* JS adds .menu-open to #navbar to trigger drawer */
+#navbar.menu-open .nav-drawer {
+  transform: translateX(0);
+}
+
+/* Drawer close button — top right corner */
+.nav-drawer-close {
+  position: absolute;
+  top: 1.25rem;
+  right: var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-600);
+  border-radius: 50%;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.nav-drawer-close:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--text-100);
+}
+
+.nav-drawer-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.nav-drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nav-drawer ul li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-drawer ul li a,
+.nav-drawer .nav-drop-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-600);
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.nav-drawer ul li a:hover,
+.nav-drawer .nav-drop-toggle:hover {
+  color: var(--blue);
+}
+
+/* Mobile sub-menu (Services dropdown) — max-height transition for smooth open */
+.nav-drawer .nav-sub {
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--space-md);
+  gap: 0;
+  border-top: none;
+  /* Closed state */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-bottom: 0;
+  transition:
+    max-height 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity    0.3s ease,
+    padding-bottom 0.3s ease;
+}
+
+.nav-drawer .nav-sub.open {
+  max-height: 200px; /* tall enough for 3 links */
+  opacity: 1;
+  padding-bottom: var(--space-sm);
+}
+
+.nav-drawer .nav-sub li {
+  border-bottom: none;
+}
+
+.nav-drawer .nav-sub li a {
+  font-size: var(--fs-body-sm);
+  color: var(--text-700);
+  padding: var(--space-sm) 0;
+}
+
+/* Drawer CTA button */
+.nav-drawer .nav-drawer-cta {
+  margin-top: var(--space-xl);
+}
+
+.nav-drawer .nav-drawer-cta .btn-primary {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Responsive breakpoints ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* Hide desktop nav links and show hamburger */
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-drawer {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-inner {
+    height: 4rem;
+  }
+
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* =============================================================================
+   04 — FOOTER
+   Dark navy background (--bg-400).
+   4-column grid: Brand/social | Pages | Get in Touch | Newsletter
+   Each column has a Bebas Neue heading with a short blue underline accent.
+   Bottom bar has copyright text.
+============================================================================= */
+
+#footer {
+  background-color: var(--bg-400);
+  padding-top: var(--space-4xl);
+  padding-bottom: 0;
+}
+
+/* ── 4-column grid ───────────────────────────────────────────────────────── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+  gap: var(--space-3xl);
+  padding-bottom: var(--space-4xl);
+}
+
+/* ── Column heading (Bebas Neue + blue underline) ────────────────────────── */
+.footer-col h4 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h5);
+  font-weight: 400;
+  letter-spacing: var(--ls-heading);
+  color: var(--text-400);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  /* Blue underline accent — short, left-aligned */
+  border-bottom: 3px solid var(--blue);
+  display: inline-block;
+}
+
+/* ── Column 1 — Brand + description + social ─────────────────────────────── */
+.footer-brand p {
+  font-size: var(--fs-body-sm);
+  color: var(--text-500);
+  line-height: var(--lh-body);
+  margin-bottom: var(--space-lg);
+  max-width: 28ch;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.10);
+  color: var(--text-400);
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.footer-social a:hover {
+  background-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.footer-social svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* ── Column 2 — Pages nav links ─────────────────────────────────────────── */
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.footer-nav ul li a {
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: var(--text-500);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer-nav ul li a:hover {
+  color: var(--text-400);
+}
+
+/* ── Column 3 — Contact info ─────────────────────────────────────────────── */
+.footer-contact address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.footer-contact address p,
+.footer-contact address a {
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: var(--text-500);
+  text-decoration: none;
+  line-height: var(--lh-body);
+  transition: color var(--transition-base);
+}
+
+.footer-contact address a:hover {
+  color: var(--text-400);
+}
+
+/* ── Column 4 — Newsletter ───────────────────────────────────────────────── */
+.footer-newsletter p {
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: var(--text-400);
+  line-height: var(--lh-body);
+  margin-bottom: var(--space-lg);
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-form input[type="email"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--text-400);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-input);
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+
+.footer-form input[type="email"]::placeholder {
+  color: var(--text-500);
+}
+
+.footer-form input[type="email"]:focus {
+  border-color: var(--blue);
+}
+
+.footer-form .btn-primary {
+  width: 100%;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+
+/* ── Bottom bar ──────────────────────────────────────────────────────────── */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-block: var(--space-lg);
+}
+
+.footer-bottom p {
+  font-size: var(--fs-caption);
+  color: var(--text-500);
+  text-align: center;
+  max-width: none;
+}
+
+/* ── Footer responsive ───────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
+
+
+/* =============================================================================
+   05 — PAGE HERO BANNER
+   Reusable full-width hero used on all three service pages.
+   Full-width background image with dark overlay, centered h1 + breadcrumb.
+   Only the background image changes per page — handled in each page's CSS.
+
+   HTML structure expected:
+   <section id="page-hero">
+     <div class="container">
+       <h1>Custom Pool Construction</h1>
+       <nav class="breadcrumb" aria-label="Breadcrumb"> ... </nav>
+     </div>
+     <picture>  ← background image (lazy loaded per CodeStitch method)
+       <source media="(max-width: 600px)" srcset="hero-m.webp">
+       <source media="(min-width: 601px)" srcset="hero.webp">
+       <img aria-hidden="true" loading="lazy" decoding="async"
+            src="hero.jpg" alt="" width="1920" height="600">
+     </picture>
+   </section>
+============================================================================= */
+
+#page-hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 28rem; /* ~448px — consistent height across all service pages */
+  overflow: hidden;
+}
+
+/* Dark overlay on top of background image */
+#page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 22, 45, 0.60);
+  z-index: 1;
+}
+
+/* Content sits above overlay */
+#page-hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+#page-hero h1 {
+  color: var(--text-400);
+  letter-spacing: var(--ls-heading);
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.breadcrumb a {
+  color: var(--text-400);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.breadcrumb a:hover {
+  color: var(--text-300);
+}
+
+/* Separator " / " */
+.breadcrumb .sep {
+  color: var(--text-500);
+}
+
+/* Current active page — blue */
+.breadcrumb .current {
+  color: var(--text-300);
+}
+
+/* ── Background image (CodeStitch lazy-load method) ──────────────────────── */
+#page-hero picture {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+#page-hero picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #page-hero {
+    min-height: 20rem;
+  }
+}

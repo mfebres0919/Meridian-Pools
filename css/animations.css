@@ -1,0 +1,362 @@
+/* =============================================================================
+   MERIDIAN POOLS — animations.css
+   MigsFlow Web Design
+
+   All @keyframes and reusable animation utility classes live here.
+   This is the single file to check when debugging any animation.
+
+   Requires global.css to be loaded first for CSS variables.
+
+   HOW TO USE
+   Add a utility class to any element in HTML to animate it.
+   For scroll-triggered animations, JS (main.js) uses IntersectionObserver
+   to add the .is-visible class when the element enters the viewport.
+
+   Example:
+   <div class="fade-up">...</div>        ← animates on page load
+   <div class="reveal fade-up">...</div> ← animates when scrolled into view
+
+   TABLE OF CONTENTS
+   01. Keyframes
+   02. Base Reveal Setup
+   03. Fade Animations
+   04. Slide Animations
+   05. Scale Animations
+   06. Stagger Delays
+   07. Misc / UI Animations
+============================================================================= */
+
+
+/* =============================================================================
+   01 — KEYFRAMES
+============================================================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); }
+  to   { transform: scale(1); }
+}
+
+/* Subtle pulse — used for CTA buttons or highlight elements */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+/* Dot / badge ping effect */
+@keyframes ping {
+  0%   { transform: scale(1);    opacity: 0.8; }
+  100% { transform: scale(1.6);  opacity: 0; }
+}
+
+/* Spinner — used on form submit states */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Underline slide-in — used on nav link hover and footer headings */
+@keyframes lineSlideIn {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Number counter shimmer — used on stat numbers in about section */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+
+/* =============================================================================
+   02 — BASE REVEAL SETUP
+   Elements with .reveal start invisible.
+   JS (main.js IntersectionObserver) adds .is-visible to trigger the animation.
+   Elements without .reveal animate immediately on page load.
+============================================================================= */
+
+.reveal {
+  opacity: 0;
+  /* Individual animation is set by the paired class below */
+}
+
+.reveal.is-visible {
+  opacity: 1; /* JS adds this; the paired class handles the full animation */
+}
+
+
+/* =============================================================================
+   03 — FADE ANIMATIONS
+============================================================================= */
+
+/* ── Fade in (opacity only) ──────────────────────────────────────────────── */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.reveal.fade-in {
+  animation: none;
+  transition: opacity 0.6s ease;
+}
+
+.reveal.fade-in.is-visible {
+  opacity: 1;
+}
+
+/* ── Fade up ─────────────────────────────────────────────────────────────── */
+.fade-up {
+  animation: fadeUp 0.65s ease forwards;
+}
+
+.reveal.fade-up {
+  animation: none;
+  transform: translateY(24px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Fade down ───────────────────────────────────────────────────────────── */
+.fade-down {
+  animation: fadeDown 0.65s ease forwards;
+}
+
+.reveal.fade-down {
+  animation: none;
+  transform: translateY(-24px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.fade-down.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Fade left (enters from right) ──────────────────────────────────────── */
+.fade-left {
+  animation: fadeLeft 0.65s ease forwards;
+}
+
+.reveal.fade-left {
+  animation: none;
+  transform: translateX(32px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.fade-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Fade right (enters from left) ──────────────────────────────────────── */
+.fade-right {
+  animation: fadeRight 0.65s ease forwards;
+}
+
+.reveal.fade-right {
+  animation: none;
+  transform: translateX(-32px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.fade-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* =============================================================================
+   04 — SLIDE ANIMATIONS
+   Larger movement than fade — used for hero text and section headers.
+============================================================================= */
+
+.slide-up {
+  animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal.slide-up {
+  animation: none;
+  transform: translateY(40px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.slide-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =============================================================================
+   05 — SCALE ANIMATIONS
+   Used for cards, images, and feature blocks entering the viewport.
+============================================================================= */
+
+.scale-up {
+  animation: scaleUp 0.6s ease forwards;
+}
+
+.reveal.scale-up {
+  animation: none;
+  transform: scale(0.92);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.scale-up.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* =============================================================================
+   06 — STAGGER DELAYS
+   Add to siblings inside a grid or flex row to create a cascading entrance.
+   Works with any reveal animation class above.
+
+   Example:
+   <div class="reveal fade-up delay-1">Card 1</div>
+   <div class="reveal fade-up delay-2">Card 2</div>
+   <div class="reveal fade-up delay-3">Card 3</div>
+============================================================================= */
+
+.delay-1 { transition-delay: 0.1s !important; animation-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s !important; animation-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s !important; animation-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s !important; animation-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s !important; animation-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s !important; animation-delay: 0.6s; }
+
+
+/* =============================================================================
+   07 — MISC / UI ANIMATIONS
+============================================================================= */
+
+/* ── Spinner (form submit loading state) ─────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ── Pulse dot (live / active indicator) ────────────────────────────────── */
+.pulse-dot {
+  position: relative;
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--blue);
+  border-radius: 50%;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--blue);
+  animation: ping 1.4s ease-out infinite;
+}
+
+/* ── Hover lift — subtle card hover effect ───────────────────────────────── */
+.hover-lift {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Image zoom on hover — used on project/gallery cards ────────────────── */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img,
+.img-zoom picture {
+  transition: transform 0.5s ease;
+}
+
+.img-zoom:hover img,
+.img-zoom:hover picture img {
+  transform: scale(1.04);
+}
