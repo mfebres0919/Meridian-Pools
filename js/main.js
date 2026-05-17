@@ -227,6 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (revealElements.length > 0) {
 
+    // Use a lower threshold on mobile so tall elements still trigger
+    const isMobile = window.innerWidth < 768;
+
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -236,8 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px' // trigger slightly before bottom of viewport
+      threshold: isMobile ? 0.05 : 0.15,
+      rootMargin: isMobile ? '0px' : '0px 0px -40px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
