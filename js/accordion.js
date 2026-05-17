@@ -11,11 +11,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const items = accordion.querySelectorAll('.faq-item');
 
+  const closeItem = (item) => {
+    const body = item.querySelector('.faq-body');
+    const trigger = item.querySelector('.faq-trigger');
+    // Set explicit height before closing so transition has something to animate from
+    body.style.height = body.scrollHeight + 'px';
+    // Force reflow
+    body.offsetHeight;
+    body.style.height = '0px';
+    item.classList.remove('open');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  };
+
+  const openItem = (item) => {
+    const body = item.querySelector('.faq-body');
+    const trigger = item.querySelector('.faq-trigger');
+    body.style.height = body.scrollHeight + 'px';
+    item.classList.add('open');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    // After transition ends, set to auto so content can resize
+    body.addEventListener('transitionend', () => {
+      if (item.classList.contains('open')) {
+        body.style.height = 'auto';
+      }
+    }, { once: true });
+  };
+
   const closeAll = () => {
     items.forEach(item => {
-      item.classList.remove('open');
-      const trigger = item.querySelector('.faq-trigger');
-      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      if (item.classList.contains('open')) closeItem(item);
     });
   };
 
@@ -25,15 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     trigger.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-
-      // Close all first
       closeAll();
-
-      // If it wasn't open, open it
-      if (!isOpen) {
-        item.classList.add('open');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
+      if (!isOpen) openItem(item);
     });
   });
 

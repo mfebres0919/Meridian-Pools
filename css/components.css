@@ -879,3 +879,25 @@
     min-height: 20rem;
   }
 }
+
+
+/* ── Open dropdown on hover (desktop only) ───────────────────────────────── */
+@media (min-width: 1025px) {
+  .nav-dropdown {
+    /* Move the top offset into padding so there's no gap to fall through */
+    top: 100%;
+    padding-top: 0.75rem;
+    margin-top: 0;
+  }
+
+  .nav-links li:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-links li:hover .nav-chevron {
+    transform: rotate(180deg);
+  }
+}

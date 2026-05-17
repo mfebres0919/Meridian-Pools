@@ -336,3 +336,66 @@ if (testimonialsTrack && testimonialsPrev && testimonialsNext) {
   // Init
   goToSlide(0);
 }
+
+
+
+/* ===========================================================================
+   SCROLL TO TOP BUTTON
+=========================================================================== */
+const scrollTopBtn = document.getElementById('scrollTop');
+
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+
+/* ===========================================================================
+   TEAM CAROUSEL — mobile only
+=========================================================================== */
+const teamTrack = document.getElementById('teamTrack');
+const teamPrev  = document.getElementById('teamPrev');
+const teamNext  = document.getElementById('teamNext');
+
+if (teamTrack && teamPrev && teamNext) {
+  let teamIndex = 0;
+  const teamCards = teamTrack.querySelectorAll('.team-card');
+  const totalTeam = teamCards.length;
+
+  const getTeamCardWidth = () => {
+    const card = teamCards[0];
+    if (!card) return 0;
+    const gap = parseInt(getComputedStyle(teamTrack).gap) || 0;
+    return card.offsetWidth + gap;
+  };
+
+  const updateTeamBtns = () => {
+    teamPrev.disabled = teamIndex === 0;
+    teamNext.disabled = teamIndex >= totalTeam - 1;
+  };
+
+const slideTeamTo = (index) => {
+  if (window.innerWidth >= 768) return;
+  teamIndex = Math.max(0, Math.min(index, totalTeam - 1));
+  const cardWidth = getTeamCardWidth();
+  const offset = (window.innerWidth - teamCards[0].offsetWidth) / 2;
+  const translateX = teamIndex * cardWidth - offset;
+  teamTrack.style.transform = `translateX(-${Math.max(0, translateX)}px)`;
+  updateTeamBtns();
+};
+
+  teamPrev.addEventListener('click', () => slideTeamTo(teamIndex - 1));
+  teamNext.addEventListener('click', () => slideTeamTo(teamIndex + 1));
+
+  window.addEventListener('resize', () => slideTeamTo(0));
+  updateTeamBtns();
+}

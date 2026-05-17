@@ -547,21 +547,56 @@
   max-width: none;
 }
 
-/* Rating bar */
+/* ── Rating bar ──────────────────────────────────────────────────────────── */
 .about-rating-bar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: var(--space-sm);
-  flex-wrap: wrap;
 }
 
-@media (min-width: 768px) {
-  .about-rating-bar {
-    gap: var(--space-md);
-  }
+/* Top row: stacked icons + tagline */
+.about-rating-bar-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
 }
 
+/* Stacked icon group — headshot behind, phone icon in front */
+.about-rating-icons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 3.75rem;
+  height: 2.25rem;
+}
+
+/* Headshot placeholder — sits behind, left */
+.about-rating-headshot {
+  position: absolute;
+  left: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #D9D9D9;
+  border: 2px solid var(--bg-100);
+  z-index: 0;
+}
+
+.about-rating-headshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Phone icon — sits in front, offset right */
 .about-rating-icon {
+  position: absolute;
+  right: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -595,6 +630,7 @@
   color: var(--blue-hover);
 }
 
+/* Score row — indented to align under tagline text */
 .about-rating-score {
   display: flex;
   align-items: center;
@@ -813,7 +849,6 @@
   color: var(--white);
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
-
 
 /* =============================================================================
    04 — CTA 1
@@ -2200,14 +2235,15 @@
 }
 
 /* Body — hidden by default, max-height transition for smooth open */
+/* Body — hidden by default */
 .faq-body {
-  max-height: 0;
+  height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .faq-item.open .faq-body {
-  max-height: 400px; /* tall enough for any content */
+  /* height is set by JS — no max-height needed */
 }
 
 .faq-body p {
@@ -2250,5 +2286,156 @@
 @media (min-width: 1025px) {
   .faq-img-wrap img {
     height: 680px;
+  }
+}
+
+
+
+
+/* =============================================================================
+   11 — FINAL CTA SECTION
+   Mobile first
+============================================================================= */
+
+#cta-final {
+  background-color: var(--bg-300);
+  overflow: hidden;
+}
+
+/* ── Layout — mobile: content first, image second ────────────────────────── */
+.cta-final-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+/* On desktop: image left, content right */
+@media (min-width: 1025px) {
+  .cta-final-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+  }
+}
+
+/* ── Mobile: content comes first in DOM order but we need image second ────── */
+/* On mobile content is naturally first since it's second in the HTML
+   but we use order to flip them on mobile */
+.cta-final-img-col {
+  order: 2; /* image below content on mobile */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-final-content {
+  order: 1; /* content above image on mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  min-width: 0;
+}
+
+/* On desktop restore natural left/right order */
+@media (min-width: 1025px) {
+  .cta-final-img-col {
+    order: 1;
+  }
+
+  .cta-final-content {
+    order: 2;
+    max-width: 800px;
+  }
+}
+
+/* ── Decorative floating circles ─────────────────────────────────────────── */
+.cta-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Large blue circle — top left of image */
+.cta-circle-1 {
+  width: 220px;
+  height: 220px;
+  border: 2px solid var(--blue);
+  opacity: 0.35;
+  top: -40px;
+  left: -60px;
+  animation: floatCircle 6s ease-in-out infinite;
+}
+
+/* Smaller grey circle — bottom left, overlapping */
+.cta-circle-2 {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #CCCCCC;
+  opacity: 0.5;
+  top: 100px;
+  left: -20px;
+  animation: floatCircle 8s ease-in-out infinite reverse;
+}
+
+@keyframes floatCircle {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-16px); }
+  100% { transform: translateY(0); }
+}
+
+/* ── Image ───────────────────────────────────────────────────────────────── */
+.cta-final-img-wrap {
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  line-height: 0;
+  width: 100%;
+}
+
+.cta-final-img-wrap img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+@media (min-width: 1025px) {
+  .cta-final-img-wrap img {
+    height: 520px;
+  }
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────── */
+.cta-final-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--blue);
+  flex-shrink: 0;
+  margin-right: var(--space-xs);
+}
+
+.cta-final-content h2 {
+  color: var(--text-100);
+}
+
+.cta-final-body {
+  font-size: var(--fs-body);
+  color: var(--text-700);
+  line-height: var(--lh-body);
+  max-width: 52ch;
+}
+
+@media (min-width: 768px) {
+  .cta-final-body {
+    font-size: var(--fs-body-lg);
   }
 }

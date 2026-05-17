@@ -134,7 +134,7 @@
       <!-- Desktop nav links -->
       <nav aria-label="Main navigation">
         <ul class="nav-links">
-          <li><a href="about.html">About</a></li>
+          <li><a href="html/about.html">About</a></li>
 
           <!-- Services dropdown -->
           <li>
@@ -207,7 +207,7 @@
         </button>
 
         <ul>
-          <li><a href="about.html">About</a></li>
+          <li><a href="./html/about.html">About</a></li>
 
           <!-- Services accordion -->
           <li>
@@ -517,189 +517,204 @@
     </section>
     <!-- /TRUST BAR -->
 
+<!-- ==================================================================
+   ABOUT SECTION
+   Two-column: image + stat overlay left, content right.
+   White background, standard section padding.
+=================================================================== -->
+<section id="about" class="section-padding">
+  <div class="container about-inner">
 
-    <!-- ==================================================================
-       ABOUT SECTION
-       Two-column: image + stat overlay left, content right.
-       White background, standard section padding.
-    =================================================================== -->
-    <section id="about" class="section-padding">
-      <div class="container about-inner">
+    <!-- Left column — image + overlays -->
+    <div class="about-img-col reveal fade-right">
 
-        <!-- Left column — image + overlays -->
-        <div class="about-img-col reveal fade-right">
+      <!-- Main pool image -->
+      <div class="about-img-wrap">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="images/assets/about-pool-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="images/assets/about-pool.webp">
+          <img
+            src="images/assets/about-pool.jpg"
+            alt="Custom gunite pool built by Meridian Pools"
+            width="640"
+            height="520"
+            loading="lazy"
+            decoding="async">
+        </picture>
 
-          <!-- Main pool image -->
-          <div class="about-img-wrap">
-            <picture>
-              <source media="(max-width: 600px)"
-                      srcset="images/assets/about-pool-m.webp">
-              <source media="(min-width: 601px)"
-                      srcset="images/assets/about-pool.webp">
-              <img
-                src="images/assets/about-pool.jpg"
-                alt="Custom gunite pool built by Meridian Pools"
-                width="640"
-                height="520"
-                loading="lazy"
-                decoding="async">
-            </picture>
-
-            <!-- Stat overlay — bottom left of image -->
-            <div class="about-stat-card">
-              <div class="about-stat-top">
-                <p class="about-stat-number">120+</p>
-                <!-- Stacked avatar placeholders -->
-                <div class="about-stat-avatars">
-                  <div class="avatar-placeholder"></div>
-                  <div class="avatar-placeholder"></div>
-                  <div class="avatar-placeholder"></div>
-                  <div class="avatar-placeholder"></div>
-                </div>
-              </div>
-              <p class="about-stat-label">Satisfied Clients</p>
+        <!-- Stat overlay — bottom left of image -->
+        <div class="about-stat-card">
+          <div class="about-stat-top">
+            <p class="about-stat-number">120+</p>
+            <div class="about-stat-avatars">
+              <div class="avatar-placeholder"></div>
+              <div class="avatar-placeholder"></div>
+              <div class="avatar-placeholder"></div>
+              <div class="avatar-placeholder"></div>
             </div>
-
           </div>
-          <!-- /about-img-wrap -->
+          <p class="about-stat-label">Satisfied Clients</p>
+        </div>
 
-          <!-- Bottom bar — rating + tagline -->
-          <div class="about-rating-bar">
+      </div>
+      <!-- /about-img-wrap -->
+
+      <!-- Bottom bar — rating + tagline -->
+      <div class="about-rating-bar">
+
+        <!-- Top row: stacked icons + tagline -->
+        <div class="about-rating-bar-top">
+          <div class="about-rating-icons">
+            <!-- Headshot placeholder — replace with real image -->
+            <div class="about-rating-headshot">
+              <picture>
+                <img
+                  src="images/headshots/client-rating.jpg"
+                  alt="Happy client"
+                  width="36"
+                  height="36"
+                  loading="lazy"
+                  decoding="async">
+              </picture>
+            </div>
+            <!-- Blue phone icon — overlaps headshot -->
             <div class="about-rating-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                    fill="currentColor" aria-hidden="true">
                 <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2 2.22z"/>
               </svg>
             </div>
-            <p class="about-rating-text">
-              From vision to structure —
-              <a href="about.html">Where Creativity Meets Construction Excellence</a>
-            </p>
-            <div class="about-rating-score">
-              <span class="about-rating-num">4.9/5</span>
-              <div class="about-rating-stars" aria-label="4.9 out of 5 stars">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              </div>
-              <span class="about-rating-count">Our 500+ Reviews</span>
-            </div>
           </div>
-          <!-- /about-rating-bar -->
-
-        </div>
-        <!-- /about-img-col -->
-
-
-        <!-- Right column — text content -->
-        <div class="about-content reveal fade-left">
-
-          <!-- Eyebrow -->
-          <p class="about-eyebrow eyebrow">About Us</p>
-
-          <h2>Designed Around Your Families Lifestyle</h2>
-
-          <p class="about-body">
-            We create custom pools and outdoor spaces that feel intentional,
-            timeless, and built for real life. From modern geometric designs to
-            resort-style backyard retreats, every project is tailored to the home,
-            the lifestyle, and the people using it.
+          <p class="about-rating-text">
+            From vision to structure —
+            <a href="about.html">Where Creativity Meets Construction Excellence</a>
           </p>
-
-          <!-- Feature cards row -->
-          <div class="about-features">
-
-            <div class="about-feature-card">
-              <!-- Icon -->
-              <div class="about-feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/>
-                </svg>
-              </div>
-              <div>
-                <h5>Built to Last</h5>
-                <p>Premium gunite construction, experienced craftsmanship, and
-                  materials selected for long-term durability.</p>
-              </div>
-            </div>
-
-            <div class="about-feature-card">
-              <!-- Icon -->
-              <div class="about-feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
-                </svg>
-              </div>
-              <div>
-                <h5>Designed With Purpose</h5>
-                <p>Every layout is carefully planned around flow, functionality,
-                  entertaining, and everyday family living.</p>
-              </div>
-            </div>
-
-          </div>
-          <!-- /about-features -->
-
-          <!-- Bullet list + video — bottom row -->
-          <div class="about-bottom-row">
-
-            <!-- Bullet list -->
-            <ul class="about-list">
-              <li>Fully custom pool &amp; outdoor living designs</li>
-              <li>Clear communication from start to finish</li>
-              <li>Luxury-focused materials and modern finishes</li>
-            </ul>
-
-            <!-- Video thumbnail -->
-            <div class="about-video img-zoom">
-              <picture>
-                <source media="(max-width: 600px)"
-                        srcset="images/assets/about-video-m.webp">
-                <source media="(min-width: 601px)"
-                        srcset="images/assets/about-video.webp">
-                <img
-                  src="images/assets/about-video.jpg"
-                  alt="Meridian Pools construction process"
-                  width="340"
-                  height="200"
-                  loading="lazy"
-                  decoding="async">
-              </picture>
-              <!-- Play overlay (decorative for now) -->
-              <div class="about-video-play" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                     fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
-
-          </div>
-          <!-- /about-bottom-row -->
-
-          <!-- CTA button -->
-          <a href="contact.html" class="btn-primary">
-            Schedule Consultation
-            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
-                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                 aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
-            </svg>
-          </a>
-
         </div>
-        <!-- /about-content -->
+
+        <!-- Bottom row: score + stars + count -->
+        <div class="about-rating-score">
+          <span class="about-rating-num">4.9/5</span>
+          <div class="about-rating-stars" aria-label="4.9 out of 5 stars">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <span class="about-rating-count">Our 500+ Reviews</span>
+        </div>
 
       </div>
-    </section>
-    <!-- /ABOUT -->
+      <!-- /about-rating-bar -->
+
+    </div>
+    <!-- /about-img-col -->
+
+
+    <!-- Right column — text content -->
+    <div class="about-content reveal fade-left">
+
+      <!-- Eyebrow -->
+      <p class="about-eyebrow eyebrow">About Us</p>
+
+      <h2>Designed Around Your Families Lifestyle</h2>
+
+      <p class="about-body">
+        We create custom pools and outdoor spaces that feel intentional,
+        timeless, and built for real life. From modern geometric designs to
+        resort-style backyard retreats, every project is tailored to the home,
+        the lifestyle, and the people using it.
+      </p>
+
+      <!-- Feature cards -->
+      <div class="about-features">
+
+        <div class="about-feature-card">
+          <div class="about-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/>
+            </svg>
+          </div>
+          <div>
+            <h5>Built to Last</h5>
+            <p>Premium gunite construction, experienced craftsmanship, and
+              materials selected for long-term durability.</p>
+          </div>
+        </div>
+
+        <div class="about-feature-card">
+          <div class="about-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+            </svg>
+          </div>
+          <div>
+            <h5>Designed With Purpose</h5>
+            <p>Every layout is carefully planned around flow, functionality,
+              entertaining, and everyday family living.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- /about-features -->
+
+      <!-- Bullet list + video -->
+      <div class="about-bottom-row">
+
+        <ul class="about-list">
+          <li>Fully custom pool &amp; outdoor living designs</li>
+          <li>Clear communication from start to finish</li>
+          <li>Luxury-focused materials and modern finishes</li>
+        </ul>
+
+        <div class="about-video img-zoom">
+          <picture>
+            <source media="(max-width: 600px)"
+                    srcset="images/assets/about-video-m.webp">
+            <source media="(min-width: 601px)"
+                    srcset="images/assets/about-video.webp">
+            <img
+              src="images/assets/about-video.jpg"
+              alt="Meridian Pools construction process"
+              width="340"
+              height="200"
+              loading="lazy"
+              decoding="async">
+          </picture>
+          <div class="about-video-play" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                 fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+      <!-- /about-bottom-row -->
+
+      <!-- CTA -->
+      <a href="contact.html" class="btn-primary">
+        Schedule Consultation
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor"
+             aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+        </svg>
+      </a>
+
+    </div>
+    <!-- /about-content -->
+
+  </div>
+</section>
+<!-- /ABOUT -->
 
     <!-- ==================================================================
    CTA 1 — DREAM BACKYARD
@@ -1627,6 +1642,15 @@
         </button>
         <div class="faq-body">
         <p>Absolutely. Most homeowners don't realize their backyard is one of the highest-ROI investments they can make. A professionally designed custom pool can increase your home's value by 5–15% and transform how your family uses your outdoor space every single day.</p>
+        <a href="quote.html" class="btn-primary">
+            Get a Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>        
         </div>
     </div>
 
@@ -1648,6 +1672,15 @@
         </button>
         <div class="faq-body">
         <p>A custom pool is designed entirely around your home, your yard, and how your family actually lives — not pulled from a catalog. Every dimension, material, and feature is chosen specifically for you. The result is something that feels like it was always supposed to be there.</p>
+        <a href="quote.html" class="btn-primary">
+            Get a Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>        
         </div>
     </div>
 
@@ -1699,6 +1732,15 @@
         </button>
         <div class="faq-body">
         <p>Most custom gunite pools take between 10 and 16 weeks from permit approval to water in the pool. The exact timeline depends on the complexity of your design, weather, and permit processing in your city. We give you a clear schedule at the start and keep you updated at every milestone so there are never any surprises.</p>
+        <a href="quote.html" class="btn-primary">
+            Get a Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>        
         </div>
     </div>
 
@@ -1720,6 +1762,15 @@
         </button>
         <div class="faq-body">
         <p>Our custom projects typically start around $80,000 and go up from there depending on size, features, and outdoor living additions. We offer financing options to make it easier to get started. The best way to get an accurate number is to fill out our quote form — we'll come out, look at your space, and give you a real number, not a ballpark.</p>
+        <a href="quote.html" class="btn-primary">
+            Get a Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>        
         </div>
     </div>
 
@@ -1741,6 +1792,15 @@
         </button>
         <div class="faq-body">
         <p>Yes — completely. We handle all permits, inspections, and city approvals from start to finish. You don't need to make a single call to the city or show up for a single inspection. We manage the entire process so you can focus on picking out your tile and planning your first pool party.</p>
+        <a href="quote.html" class="btn-primary">
+            Get a Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>        
         </div>
     </div>
 
@@ -1771,6 +1831,59 @@
 </section>
 <!-- /FAQ -->
 
+<!-- ==================================================================
+   FINAL CTA SECTION
+   Light blue bg, image left with floating circles, content right.
+   Mobile: text first, image second.
+=================================================================== -->
+<section id="cta-final" class="section-padding">
+  <div class="container cta-final-inner">
+
+    <!-- Left — image + decorative circles (hidden on mobile, shown on desktop) -->
+    <div class="cta-final-img-col reveal fade-right">
+      <!-- Decorative floating circles -->
+      <div class="cta-circle cta-circle-1" aria-hidden="true"></div>
+      <div class="cta-circle cta-circle-2" aria-hidden="true"></div>
+
+      <picture class="cta-final-img-wrap">
+        <source media="(max-width: 600px)"
+                srcset="images/assets/cta-final-m.webp">
+        <source media="(min-width: 601px)"
+                srcset="images/assets/cta-final.webp">
+        <img
+          src="images/assets/cta-final.jpg"
+          alt="Meridian Pools craftsman finishing pool coping"
+          width="480"
+          height="560"
+          loading="lazy"
+          decoding="async">
+      </picture>
+    </div>
+
+    <!-- Right — content -->
+    <div class="cta-final-content reveal fade-left">
+      <p class="eyebrow cta-final-eyebrow">Ready to Get Started?</p>
+      <h2>Your Dream Backyard Is One Conversation Away.</h2>
+      <p class="cta-final-body">
+        Answer 10 quick questions about your project and we'll send you a
+        custom welcome package instantly. Based on your answers, our team
+        will follow up with a detailed quote within 24 to 48 hours. No
+        pressure, no commitment, completely free.
+      </p>
+      <a href="quote.html" class="btn-primary">
+        Get a Quote
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor"
+             aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- /FINAL CTA -->
   </main>
 
 
@@ -1871,6 +1984,14 @@
   </footer>
   <!-- /FOOTER -->
 
+<!-- Scroll to top button -->
+<button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+       viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
 
   <!-- =====================================================================
      SCRIPTS
