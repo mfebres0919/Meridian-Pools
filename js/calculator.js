@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateQuoteUrl() {
     if (!quoteBtn) return;
     const params = new URLSearchParams();
-    params.set('service', 'custom');
+    params.set('service', 'custom-build');
     if (state.type.length)     params.set('type',     state.type[0]);
     if (state.style.length)    params.set('style',    state.style[0]);
     if (state.material.length) params.set('material', state.material[0]);

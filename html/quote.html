@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get a custom pool quote from Meridian Pools. Answer a few quick questions and we'll send you a welcome package within 24-48 hours.">
+
+  <title>Get a Quote | Meridian Pools Houston</title>
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="../fonts/bebas-neue-v16-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v20-latin-700.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v20-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+  <!-- Preload hero background images -->
+  <link rel="preload" as="image" href="../images/backgrounds/quote-hero-m.webp"
+        media="(max-width: 600px)">
+  <link rel="preload" as="image" href="../images/backgrounds/quote-hero.webp"
+        media="(min-width: 601px)">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/quote.css">
+
+</head>
+
+<body class="quote-page">
+
+  <!-- =====================================================================
+     TOPBAR
+  ====================================================================== -->
+  <div id="topbar">
+    <div class="container topbar-inner">
+
+      <div class="topbar-info">
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" d="M12 6v6l4 2"/>
+          </svg>
+          Sun - Fri (7:00 - 18:00)
+        </span>
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M2.25 6.338c0-.414.336-.75.75-.75h2.25a.75.75 0 0 1 .743.647l.63 4.2a.75.75 0 0 1-.44.813l-1.27.508a11.25 11.25 0 0 0 5.38 5.38l.508-1.27a.75.75 0 0 1 .814-.44l4.2.63a.75.75 0 0 1 .647.743V18a.75.75 0 0 1-.75.75C9.716 18.75 2.25 11.284 2.25 6.338Z"/>
+          </svg>
+          <a href="tel:+18323456789">+1 832-345-6789</a>
+        </span>
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
+          </svg>
+          <a href="https://maps.google.com" target="_blank" rel="noopener">
+            22 Random Street, Houston, TX 77089
+          </a>
+        </span>
+      </div>
+
+      <div class="topbar-social">
+        <a href="#" aria-label="Twitter / X">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="X">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <!-- /TOPBAR -->
+
+
+  <!-- =====================================================================
+     NAVIGATION
+  ====================================================================== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+
+      <a href="../index.html" class="nav-logo"
+         aria-label="Meridian Pools — Home">
+        MERIDIAN POOLS
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+
+          <li>
+            <button class="nav-drop-toggle" aria-expanded="false"
+                    aria-haspopup="true">
+              Services
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none">
+                <a href="services/custom-builds.html" role="menuitem">
+                  Custom Pool Construction
+                </a>
+              </li>
+              <li role="none">
+                <a href="services/renovations.html" role="menuitem">
+                  Remodeling &amp; Renovation
+                </a>
+              </li>
+              <li role="none">
+                <a href="services/add-ons.html" role="menuitem">
+                  Luxury Features &amp; Add-Ons
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="quote.html" class="btn-primary">
+          Get Quote
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+      </div>
+
+      <button class="nav-hamburger" aria-expanded="false"
+              aria-label="Open menu" aria-controls="mobile-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-drawer" id="mobile-drawer"
+           aria-label="Mobile navigation">
+
+        <button class="nav-drawer-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <button class="nav-drop-toggle" aria-expanded="false">
+              Services
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-sub">
+              <li><a href="services/custom-builds.html">Custom Pool Construction</a></li>
+              <li><a href="services/renovations.html">Remodeling &amp; Renovation</a></li>
+              <li><a href="services/add-ons.html">Luxury Features &amp; Add-Ons</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-drawer-cta">
+          <a href="quote.html" class="btn-primary">
+            Get Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main>
+
+    <!-- =====================================================================
+       QUOTE HERO
+    ====================================================================== -->
+    <section id="quote-hero">
+
+      <!-- Overlay -->
+      <div class="quote-hero-overlay" aria-hidden="true"></div>
+
+      <div class="container quote-hero-inner">
+
+        <!-- Left — heading -->
+        <div class="quote-hero-content reveal fade-right">
+          <p class="eyebrow quote-eyebrow">Free &amp; No Commitment</p>
+          <h1>Get Your Custom Pool Quote</h1>
+          <p class="quote-hero-body">
+            Answer a few quick questions and we'll send you a custom welcome
+            package instantly. Our team will follow up with a detailed quote
+            within 24-48 hours. No pressure, no obligation.
+          </p>
+          <div class="quote-hero-badges">
+            <span class="quote-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Takes 1-2 minutes
+            </span>
+            <span class="quote-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Response in 24-48 hours
+            </span>
+          </div>
+        </div>
+
+        <!-- Right — stats -->
+        <div class="quote-hero-stats reveal fade-left">
+          <div class="quote-stat">
+            <p class="quote-stat-num">500+</p>
+            <p class="quote-stat-label">Projects Completed</p>
+          </div>
+          <div class="quote-stat-divider" aria-hidden="true"></div>
+          <div class="quote-stat">
+            <p class="quote-stat-num">98%</p>
+            <p class="quote-stat-label">Client Satisfaction</p>
+          </div>
+          <div class="quote-stat-divider" aria-hidden="true"></div>
+          <div class="quote-stat">
+            <p class="quote-stat-num">17+</p>
+            <p class="quote-stat-label">Years in Houston</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Background image — loaded in HTML for lazy loading + mobile crop -->
+      <picture class="quote-hero-bg">
+        <source media="(max-width: 600px)" srcset="../images/backgrounds/quote-hero-m.webp">
+        <source media="(min-width: 601px)" srcset="../images/backgrounds/quote-hero.webp">
+        <img aria-hidden="true" decoding="async"
+             src="../images/backgrounds/quote-hero.webp"
+             alt="" width="1920" height="1080">
+      </picture>
+
+    </section>
+    <!-- /QUOTE HERO -->
+
+
+    <!-- =====================================================================
+       QUOTE FORM
+    ====================================================================== -->
+    <section id="quote-form-section">
+      <div class="container">
+
+        <!-- Progress card — hidden on Step 1 (service selector) -->
+        <div class="quote-progress-card" id="quoteProgressCard">
+          <div class="quote-progress-meta">
+            <span class="quote-progress-step" id="quoteProgressLabel">
+              Step 1 of 7
+            </span>
+            <span class="quote-progress-pct" id="quoteProgressPct">0%</span>
+          </div>
+          <div class="quote-progress-track" role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+               id="quoteProgressTrack">
+            <div class="quote-progress-fill" id="quoteProgressFill"></div>
+          </div>
+        </div>
+
+        <!-- Question card -->
+        <div class="quote-card" id="quoteCard">
+
+          <!-- Steps injected by JS -->
+          <div class="quote-steps" id="quoteSteps"></div>
+
+          <!-- Nav buttons -->
+          <div class="quote-nav">
+            <button class="quote-back" id="quoteBack" type="button"
+                    aria-label="Go back">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+              Back
+            </button>
+            <button class="btn-primary quote-next" id="quoteNext" type="button">
+              Next
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+        <!-- /quote-card -->
+
+        <!-- Success state — hidden until form submitted -->
+        <div class="quote-success" id="quoteSuccess" style="display:none;">
+          <div class="quote-success-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <h2>We Got Your Request!</h2>
+          <p>
+            Thanks for reaching out. We're putting together your custom
+            welcome package now and will follow up within 24-48 hours.
+          </p>
+          <a href="../index.html" class="btn-primary">
+            Back to Home
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- /QUOTE FORM -->
+
+  </main>
+
+
+  <!-- =====================================================================
+     FOOTER
+  ====================================================================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <h4>MERIDIAN POOLS</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+            sit amet consectetur adipiscing elit quisque faucibus.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-nav">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services/custom-builds.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Get In Touch</h4>
+          <address>
+            <p>12345 Random St Drive<br>Houston, TX</p>
+            <a href="tel:+18323451234">(832) 345-1234</a>
+            <a href="mailto:info@gmail.com">Info@gmail.com</a>
+          </address>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get the latest updates and offers for our services yearly.</p>
+          <form class="footer-form" action="#" method="POST"
+                aria-label="Newsletter signup">
+            <label for="footer-email-gallery" class="sr-only">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="footer-email-gallery"
+              name="email"
+              placeholder="Email your email"
+              autocomplete="email"
+              required>
+            <button type="submit" class="btn-primary">
+              Submit Now
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Meridian Pools. All rights reserved.
+          Designed by MigsFlow Web Design.</p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+
+  <script defer src="../js/main.js"></script>
+  <script defer src="../js/quote.js"></script>
+
+</body>
+</html>
