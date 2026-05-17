@@ -529,13 +529,49 @@ document.addEventListener('DOMContentLoaded', function() {
       var contactData = {};
       inputs.forEach(function(input) { contactData[input.id] = input.value.trim(); });
 
-      console.log('Quote submitted:', { track: activeTrack, answers: answers, contact: contactData });
-      // TODO: wire to backend / email service
+      // Build flat payload for Formspree
+      var payload = new FormData();
+      payload.append('_subject',  'New Quote Request — Meridian Pools (' + (activeTrack || '') + ')');
+      payload.append('name',      contactData['q-name']  || '');
+      payload.append('email',     contactData['q-email'] || '');
+      payload.append('phone',     contactData['q-phone'] || '');
+      payload.append('zip',       contactData['q-zip']   || '');
+      payload.append('service',   activeTrack            || '');
 
-      quoteCard.style.display          = 'none';
-      progressCard.style.display       = 'none';
-      quoteSuccess.style.display       = 'flex';
-      quoteSuccess.style.flexDirection = 'column';
+      // Append each answer as a readable field
+      Object.keys(answers).forEach(function(stepId) {
+        if (stepId !== 'contact') {
+          payload.append(stepId, answers[stepId].join(', '));
+        }
+      });
+
+      // Disable next button while submitting
+      nextBtn.disabled    = true;
+      nextBtn.textContent = 'Submitting…';
+
+      fetch('https://formspree.io/f/maqkynee', {
+        method : 'POST',
+        body   : payload,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          quoteCard.style.display          = 'none';
+          progressCard.style.display       = 'none';
+          quoteSuccess.style.display       = 'flex';
+          quoteSuccess.style.flexDirection = 'column';
+        } else {
+          nextBtn.disabled  = false;
+          nextBtn.innerHTML = 'Submit <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+          alert('Something went wrong. Please try again or call us directly.');
+        }
+      })
+      .catch(function() {
+        nextBtn.disabled  = false;
+        nextBtn.innerHTML = 'Submit <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        alert('Network error. Please check your connection and try again.');
+      });
+
       return;
     }
 

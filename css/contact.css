@@ -341,3 +341,61 @@
     height: 520px;
   }
 }
+
+
+
+
+/* =============================================================================
+   ADD TO BOTTOM OF contact.css
+   Contact form success state + input error styles
+============================================================================= */
+
+/* ── Success state ───────────────────────────────────────────────────────── */
+.contact-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-lg);
+  padding: var(--space-4xl) var(--space-2xl);
+  background-color: var(--bg-100);
+  border-radius: var(--radius-card);
+  border: 1px solid rgb(86, 86, 86);
+  min-height: 320px;
+}
+
+.contact-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--blue);
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.contact-success-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.contact-success h3 {
+  color: var(--text-100);
+}
+
+.contact-success p {
+  font-size: var(--fs-body);
+  color: var(--text-700);
+  max-width: 40ch;
+  line-height: var(--lh-body);
+}
+
+/* ── Input error highlight ───────────────────────────────────────────────── */
+.contact-form input.error,
+.contact-form textarea.error {
+  border-color: #E53E3E;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.12);
+}

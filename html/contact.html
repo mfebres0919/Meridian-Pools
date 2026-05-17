@@ -263,7 +263,7 @@
       </div>
 
       <form class="contact-form" id="contactForm"
-            action="#" method="POST" novalidate>
+            action="https://formspree.io/f/xeedqoar" method="POST" novalidate>
 
         <!-- Row 1 — name + email -->
         <div class="contact-row">
@@ -331,6 +331,10 @@
             required></textarea>
         </div>
 
+        <!-- Formspree hidden fields -->
+        <input type="hidden" name="_subject" value="New Contact Message — Meridian Pools">
+        <input type="hidden" name="_next" value="">
+
         <!-- Submit -->
         <button type="submit" class="btn-primary contact-submit">
           Send Message
@@ -343,6 +347,19 @@
         </button>
 
       </form>
+
+      <!-- Success message — shown by JS after submit -->
+      <div class="contact-success" id="contactSuccess" style="display:none;">
+        <div class="contact-success-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h3>Message Sent!</h3>
+        <p>Thanks for reaching out. We'll get back to you within 24-48 hours.</p>
+      </div>
 
     </div>
     <!-- /contact-form-wrap -->
@@ -479,7 +496,7 @@
           <h4>Pages</h4>
           <ul>
             <li><a href="about.html">About</a></li>
-            <li><a href="services/custom-builds.html">Services</a></li>
+            <li><a href="services/services.html">Services</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -544,6 +561,7 @@
      SCRIPTS
   ====================================================================== -->
   <script defer src="/js/main.js"></script>
+  <script defer src="/js/contact.js"></script>
 
 </body>
 </html>

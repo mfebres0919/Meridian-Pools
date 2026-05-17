@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Meridian Pools' full range of services — custom pool construction, remodeling & renovation, and luxury feature add-ons in Houston, TX.">
+
+  <title>Our Services | Meridian Pools Houston</title>
+
+  <!-- =====================================================================
+     PRELOAD — Critical fonts
+  ====================================================================== -->
+  <link rel="preload" href="../fonts/bebas-neue-v16-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v20-latin-700.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v20-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+  <!-- Preload hero background images -->
+  <link rel="preload" as="image"
+        href="../images/backgrounds/services-hero-m.webp"
+        media="(max-width: 600px)">
+  <link rel="preload" as="image"
+        href="../images/backgrounds/services-hero.webp"
+        media="(min-width: 601px)">
+
+  <!-- =====================================================================
+     CSS
+  ====================================================================== -->
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/services.css">
+
+</head>
+
+<body>
+
+  <!-- =====================================================================
+     TOPBAR
+  ====================================================================== -->
+  <div id="topbar">
+    <div class="container topbar-inner">
+
+      <div class="topbar-info">
+        <!-- Hours -->
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" d="M12 6v6l4 2"/>
+          </svg>
+          Sun - Fri (7:00 - 18:00)
+        </span>
+
+        <!-- Phone -->
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M2.25 6.338c0-.414.336-.75.75-.75h2.25a.75.75 0 0 1 .743.647l.63 4.2a.75.75 0 0 1-.44.813l-1.27.508a11.25 11.25 0 0 0 5.38 5.38l.508-1.27a.75.75 0 0 1 .814-.44l4.2.63a.75.75 0 0 1 .647.743V18a.75.75 0 0 1-.75.75C9.716 18.75 2.25 11.284 2.25 6.338Z"/>
+          </svg>
+          <a href="tel:+18323456789">+1 832-345-6789</a>
+        </span>
+
+        <!-- Address -->
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
+          </svg>
+          <a href="https://maps.google.com" target="_blank" rel="noopener">
+            22 Random Street, Houston, TX 77089
+          </a>
+        </span>
+      </div>
+
+      <!-- Social icons -->
+      <div class="topbar-social">
+        <a href="#" aria-label="Twitter / X">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <!-- /TOPBAR -->
+
+
+  <!-- =====================================================================
+     NAVIGATION
+  ====================================================================== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+
+      <a href="../../index.html" class="nav-logo"
+         aria-label="Meridian Pools — Home">
+        MERIDIAN POOLS
+      </a>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="../about.html">About</a></li>
+
+          <li>
+            <button class="nav-drop-toggle active" aria-expanded="false"
+                    aria-haspopup="true">
+              Services
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none">
+                <a href="custom-builds.html" role="menuitem">
+                  Custom Pool Construction
+                </a>
+              </li>
+              <li role="none">
+                <a href="renovations.html" role="menuitem">
+                  Remodeling &amp; Renovation
+                </a>
+              </li>
+              <li role="none">
+                <a href="add-ons.html" role="menuitem">
+                  Luxury Features &amp; Add-Ons
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="../gallery.html">Gallery</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="nav-cta">
+        <a href="../quote.html" class="btn-primary">
+          Get Quote
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="nav-hamburger" aria-expanded="false"
+              aria-label="Open menu" aria-controls="mobile-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile drawer -->
+      <nav class="nav-drawer" id="mobile-drawer"
+           aria-label="Mobile navigation">
+
+        <button class="nav-drawer-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li>
+            <button class="nav-drop-toggle" aria-expanded="false">
+              Services
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-sub">
+              <li><a href="custom-builds.html">Custom Pool Construction</a></li>
+              <li><a href="renovations.html">Remodeling &amp; Renovation</a></li>
+              <li><a href="add-ons.html">Luxury Features &amp; Add-Ons</a></li>
+            </ul>
+          </li>
+          <li><a href="../gallery.html">Gallery</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-drawer-cta">
+          <a href="../quote.html" class="btn-primary">
+            Get Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main>
+
+    <!-- =====================================================================
+       PAGE HERO
+       Swap out services-hero.webp / services-hero-m.webp per your images.
+       The overlay darkness is controlled by --hero-overlay in services.css.
+    ====================================================================== -->
+    <section id="page-hero">
+      <div class="container">
+        <h1>Our Services</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Services</span>
+        </nav>
+      </div>
+
+      <!-- Background image — CodeStitch lazy-load method -->
+      <picture>
+        <source media="(max-width: 600px)"
+                srcset="../images/backgrounds/services-hero-m.webp">
+        <source media="(min-width: 601px)"
+                srcset="../images/backgrounds/services-hero.webp">
+        <img
+          aria-hidden="true"
+          src="../images/backgrounds/services-hero.webp"
+          alt=""
+          width="1920"
+          height="600"
+          loading="eager"
+          decoding="async">
+      </picture>
+    </section>
+    <!-- /PAGE HERO -->
+
+
+    <!-- =====================================================================
+       YOUR CONTENT GOES HERE
+       Add your sections below this comment block.
+    ====================================================================== -->
+
+
+
+    <!-- /YOUR CONTENT -->
+
+      
+<!-- ==================================================================
+   SERVICES SECTION
+=================================================================== -->
+<section id="services" class="section-padding">
+  <div class="container">
+
+    <!-- Section header + nav buttons row -->
+    <div class="services-top reveal fade-up">
+      <div class="services-header">
+        <p class="eyebrow">Our Services</p>
+        <h2>What We Build</h2>
+        <p class="services-subtext">
+          From modern geometric pools to full resort-style backyard
+          transformations, we design spaces that blend luxury,
+          functionality, and long-term craftsmanship.
+        </p>
+      </div>
+    </div>
+
+    <!-- Carousel track wrapper -->
+    <div class="services-carousel-wrap">
+      <div class="services-track" id="servicesTrack">
+
+        <!-- Card 1 -->
+        <div class="service-card reveal fade-up delay-1">
+          <div class="service-card-img img-zoom">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/services/custom-builds-m.webp">
+              <source media="(min-width: 601px)" srcset="images/services/custom-builds.webp">
+              <img src="images/services/custom-builds.jpg"
+                   alt="Custom pool construction"
+                   width="480" height="380"
+                   loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="service-card-label">
+            <h4>Custom Pool Construction</h4>
+            <a href="html/services/custom-builds.html" class="service-learn-more">
+              <span class="service-learn-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+              </span>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card reveal fade-up delay-2">
+          <div class="service-card-img img-zoom">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/services/renovations-m.webp">
+              <source media="(min-width: 601px)" srcset="images/services/renovations.webp">
+              <img src="images/services/renovations.jpg"
+                   alt="Pool remodeling and renovation"
+                   width="480" height="380"
+                   loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="service-card-label">
+            <h4>Remodeling &amp; Renovation</h4>
+            <a href="html/services/renovations.html" class="service-learn-more">
+              <span class="service-learn-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+              </span>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card reveal fade-up delay-3">
+          <div class="service-card-img img-zoom">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/services/add-ons-m.webp">
+              <source media="(min-width: 601px)" srcset="images/services/add-ons.webp">
+              <img src="images/services/add-ons.jpg"
+                   alt="Luxury pool features and add-ons"
+                   width="480" height="380"
+                   loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="service-card-label">
+            <h4>Luxury Features &amp; Upgrades</h4>
+            <a href="html/services/add-ons.html" class="service-learn-more">
+              <span class="service-learn-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+              </span>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /carousel -->
+      <!-- Prev / Next buttons -->
+      <div class="services-nav">
+        <button class="services-nav-btn" id="servicesPrev" aria-label="Previous service">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button class="services-nav-btn" id="servicesNext" aria-label="Next service">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>     
+
+  </div>
+</section>
+<!-- /SERVICES -->
+
+
+  </main>
+
+
+  <!-- =====================================================================
+     FOOTER
+  ====================================================================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1 — Brand -->
+        <div class="footer-col footer-brand">
+          <h4>Pages</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+            sit amet consectetur adipiscing elit quisque faucibus.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter / X">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 — Pages -->
+        <div class="footer-col footer-nav">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 — Contact -->
+        <div class="footer-col footer-contact">
+          <h4>Get In Touch</h4>
+          <address>
+            <p>12345 Random St Drive<br>Houston, TX</p>
+            <a href="tel:+18323451234">(832) 345-1234</a>
+            <a href="mailto:info@gmail.com">Info@gmail.com</a>
+          </address>
+        </div>
+
+        <!-- Col 4 — Newsletter -->
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get the latest updates and offers for our services yearly.</p>
+          <form class="footer-form" action="#" method="POST"
+                aria-label="Newsletter signup">
+            <label for="footer-email-services" class="sr-only">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="footer-email-services"
+              name="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required>
+            <button type="submit" class="btn-primary">
+              Submit Now
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Meridian Pools. All rights reserved.
+          Designed by MigsFlow Web Design.</p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- =====================================================================
+     SCRIPTS
+  ====================================================================== -->
+  <script defer src="/js/main.js"></script>
+
+</body>
+</html>

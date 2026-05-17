@@ -1,0 +1,87 @@
+/* =============================================================================
+   MERIDIAN POOLS — services.css
+   MigsFlow Web Design
+   Services overview page
+============================================================================= */
+
+/* ── Page Hero ───────────────────────────────────────────────────────────── */
+#page-hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+#page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(9, 22, 45, 0.78) 0%,
+    rgba(9, 22, 45, 0.55) 100%
+  );
+  z-index: 1;
+}
+
+/* Content sits above overlay */
+#page-hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-block: var(--space-4xl);
+}
+
+#page-hero h1 {
+  color: var(--white);
+}
+
+/* Background image — CodeStitch method */
+#page-hero picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+#page-hero picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.breadcrumb a:hover {
+  color: var(--white);
+}
+
+.breadcrumb .sep {
+  font-size: var(--fs-body-sm);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.breadcrumb .current {
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: var(--blue);
+}

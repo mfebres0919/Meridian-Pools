@@ -506,3 +506,75 @@ if (lfTabs.length) {
     }
   });
 }
+
+
+
+/* =============================================================================
+   MERIDIAN POOLS — contact info js
+   MigsFlow Web Design
+   Handles contact form submission via Formspree fetch API.
+   Loads on: contact.html only.
+============================================================================= */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  var form        = document.getElementById('contactForm');
+  var success     = document.getElementById('contactSuccess');
+  var submitBtn   = form ? form.querySelector('.contact-submit') : null;
+
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Basic client-side validation — highlight any empty required fields
+    var required = form.querySelectorAll('input[required], textarea[required]');
+    var valid    = true;
+
+    required.forEach(function(field) {
+      if (!field.value.trim()) {
+        field.classList.add('error');
+        setTimeout(function() { field.classList.remove('error'); }, 2500);
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    // Disable button and show loading state
+    if (submitBtn) {
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    var data = new FormData(form);
+
+    fetch('https://formspree.io/f/xeedqoar', {
+      method : 'POST',
+      body   : data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        // Hide form, show success
+        form.style.display    = 'none';
+        success.style.display = 'flex';
+      } else {
+        // Re-enable button and show generic error
+        if (submitBtn) {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Send Message';
+        }
+        alert('Something went wrong. Please try again or call us directly.');
+      }
+    })
+    .catch(function() {
+      if (submitBtn) {
+        submitBtn.disabled    = false;
+        submitBtn.textContent = 'Send Message';
+      }
+      alert('Network error. Please check your connection and try again.');
+    });
+  });
+
+});
