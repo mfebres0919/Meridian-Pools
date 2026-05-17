@@ -143,3 +143,137 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+
+/* =============================================================================
+   MERIDIAN POOLS — gallery-filter.js
+   Gallery page filter tabs + lightbox.
+   Also used by homepage projects section lightbox.
+   Loads on: gallery.html + index.html
+============================================================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ── Gallery page filter tabs ────────────────────────────────────────────── */
+  const galTabs  = document.querySelectorAll('.gal-tab');
+  const galItems = document.querySelectorAll('.gal-item');
+
+  if (galTabs.length) {
+    galTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.dataset.filter;
+
+        galTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        galItems.forEach(item => {
+          const cat = item.dataset.category;
+          if (filter === 'all' || cat === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  /* ── Gallery lightbox ────────────────────────────────────────────────────── */
+  const galLightbox      = document.getElementById('galLightbox');
+  const galLightboxImg   = document.getElementById('galLightboxImg');
+  const galLightboxCap   = document.getElementById('galLightboxCaption');
+  const galLightboxClose = document.getElementById('galLightboxClose');
+
+  if (galLightbox && galItems.length) {
+    galItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const img      = item.querySelector('img');
+        const title    = item.dataset.title    || '';
+        const location = item.dataset.location || '';
+
+        if (!img) return;
+
+        galLightboxImg.src     = img.src;
+        galLightboxImg.alt     = img.alt;
+        galLightboxCap.textContent = location ? `${title} — ${location}` : title;
+
+        galLightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeGalLightbox = () => {
+      galLightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    if (galLightboxClose) {
+      galLightboxClose.addEventListener('click', closeGalLightbox);
+    }
+
+    galLightbox.addEventListener('click', (e) => {
+      if (e.target === galLightbox) closeGalLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && galLightbox.classList.contains('open')) {
+        closeGalLightbox();
+      }
+    });
+  }
+
+  /* ── Homepage projects lightbox (index.html) ─────────────────────────────── */
+  const homeLightbox      = document.getElementById('lightbox');
+  const homeLightboxImg   = document.getElementById('lightboxImg');
+  const homeLightboxClose = document.querySelector('.lightbox-close');
+
+  if (homeLightbox) {
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const img  = card.querySelector('img');
+        const h4   = card.querySelector('h4');
+        const p    = card.querySelector('p');
+
+        if (!img || !homeLightboxImg) return;
+
+        homeLightboxImg.src = img.src;
+        homeLightboxImg.alt = img.alt;
+
+        const cap = document.querySelector('.lightbox-caption');
+        if (cap) {
+          cap.textContent = h4 && p
+            ? `${h4.textContent} — ${p.textContent}`
+            : img.alt;
+        }
+
+        homeLightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeHomeLightbox = () => {
+      homeLightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    if (homeLightboxClose) {
+      homeLightboxClose.addEventListener('click', closeHomeLightbox);
+    }
+
+    homeLightbox.addEventListener('click', (e) => {
+      if (e.target === homeLightbox) closeHomeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && homeLightbox.classList.contains('open')) {
+        closeHomeLightbox();
+      }
+    });
+  }
+
+});

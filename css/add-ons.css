@@ -1,0 +1,453 @@
+/* =============================================================================
+   MERIDIAN POOLS — add-ons.css
+   MigsFlow Web Design
+
+   Luxury Features & Add-Ons page specific styles only.
+   global.css + components.css + animations.css must load before this file.
+
+   MOBILE FIRST — base styles target mobile.
+
+   TABLE OF CONTENTS
+   01. Page Hero (image override only — layout in components.css)
+============================================================================= */
+
+
+/* =============================================================================
+   01 — PAGE HERO IMAGE OVERRIDE
+============================================================================= */
+
+/* No overrides needed — components.css handles everything.
+   Add page-specific section styles below as sections are built. */
+
+
+
+   /* =============================================================================
+   02 — LUXURY FEATURES SECTION
+============================================================================= */
+
+#luxury-features {
+  background-color: var(--bg-100);
+  overflow: hidden;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.lf-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.lf-subtext {
+  font-size: var(--fs-body);
+  color: var(--text-700);
+  max-width: 52ch;
+  text-align: center;
+  line-height: var(--lh-body);
+}
+
+@media (min-width: 768px) {
+  .lf-subtext {
+    font-size: var(--fs-body-lg);
+  }
+}
+
+/* ── Filter tabs — scrollable on mobile ──────────────────────────────────── */
+.lf-tabs-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-xs);
+}
+
+.lf-tabs-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.lf-tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: max-content;
+  min-width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .lf-tabs {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.lf-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: #002E5C;
+  background-color: rgba(219, 237, 255, 0.20);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    background-color var(--transition-base),
+    font-weight var(--transition-base);
+}
+
+.lf-tab:hover {
+  background-color: rgba(219, 237, 255, 0.45);
+}
+
+.lf-tab.active {
+  background-color: rgba(219, 237, 255, 0.68);
+  font-weight: 600;
+}
+
+/* ── Panels — show/hide ──────────────────────────────────────────────────── */
+.lf-panel {
+  display: none;
+}
+
+.lf-panel.active {
+  display: block;
+  animation: fadeIn 0.35s ease forwards;
+}
+
+/* ── Panel header ────────────────────────────────────────────────────────── */
+.lf-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.lf-panel-title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Icon circle */
+.lf-panel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--bg-600);
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.lf-panel-icon img,
+.lf-panel-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.lf-panel-name {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--text-100);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.lf-panel-count {
+  font-size: var(--fs-caption);
+  color: var(--text-700);
+  max-width: none;
+}
+
+/* Starting at pill */
+.lf-panel-starting {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 1rem;
+  border-radius: 20px;
+  background-color: rgba(219, 237, 255, 0.68);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: #002E5C;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Cards grid ──────────────────────────────────────────────────────────── */
+/* Mobile: single col carousel */
+.lf-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-lg);
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+  min-width: 0;
+}
+
+/* Tablet: 2x2 grid */
+@media (min-width: 768px) {
+  .lf-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    transform: none !important;
+    transition: none;
+  }
+}
+
+/* Desktop: 4 col */
+@media (min-width: 1200px) {
+  .lf-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Individual card ─────────────────────────────────────────────────────── */
+.lf-card {
+  flex: 0 0 80vw;
+  min-width: 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--bg-100);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base);
+}
+
+.lf-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+@media (min-width: 768px) {
+  .lf-card {
+    flex: unset;
+  }
+}
+
+/* Card image */
+.lf-card-img {
+  width: 100%;
+  line-height: 0;
+  background-color: var(--bg-300);
+}
+
+.lf-card-img picture,
+.lf-card-img img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .lf-card-img picture,
+  .lf-card-img img {
+    height: 200px;
+  }
+}
+
+/* Card body */
+.lf-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-lg) var(--space-lg);
+  flex: 1;
+}
+
+.lf-card-title {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 700;
+  color: #242424;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.lf-card-desc {
+  font-size: var(--fs-caption);
+  color: #3A3A3A;
+  line-height: var(--lh-body);
+  max-width: none;
+  flex: 1;
+}
+
+.lf-card-price {
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: #00458B;
+  max-width: none;
+  margin-top: var(--space-xs);
+}
+
+/* ── Mobile nav buttons — below cards ───────────────────────────────────── */
+.lf-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+  .lf-nav {
+    display: none;
+  }
+}
+
+.lf-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  background-color: var(--bg-100);
+  color: var(--text-600);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.lf-nav-btn:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.lf-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.lf-nav-btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.lf-tab.active::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #002E5C;
+  flex-shrink: 0;
+  margin-right: var(--space-xs);
+}
+
+
+/* =============================================================================
+   03 — ADD-ONS CTA SECTION
+============================================================================= */
+
+#addons-cta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding-block: var(--section-padding);
+  overflow: hidden;
+}
+
+/* Dark overlay */
+#addons-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 22, 45, 0.68);
+  z-index: 1;
+}
+
+/* Background image */
+.addons-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.addons-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Inner content — centered */
+.addons-cta-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+}
+
+.addons-cta-inner h2 {
+  color: var(--text-400);
+  max-width: 18ch;
+}
+
+.addons-cta-body {
+  font-size: var(--fs-body);
+  color: var(--text-500);
+  max-width: 52ch;
+  text-align: center;
+  line-height: var(--lh-body);
+}
+
+@media (min-width: 768px) {
+  .addons-cta-body {
+    font-size: var(--fs-body-lg);
+  }
+}
+
+/* Buttons */
+.addons-cta-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.addons-cta-btns .btn-primary,
+.addons-cta-btns .btn-ghost-dark {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .addons-cta-btns {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+
+  .addons-cta-btns .btn-primary,
+  .addons-cta-btns .btn-ghost-dark {
+    width: auto;
+    justify-content: flex-start;
+  }
+}

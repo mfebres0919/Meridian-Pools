@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse Meridian Pools' project gallery — custom builds, renovations, and luxury features across the greater Houston area.">
+
+  <title>Gallery | Meridian Pools Houston</title>
+
+  <!-- =====================================================================
+     PRELOAD — Critical fonts
+  ====================================================================== -->
+  <link rel="preload" href="../fonts/bebas-neue-v16-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v20-latin-700.woff2"
+        as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v20-latin-regular.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+  <!-- =====================================================================
+     CSS
+  ====================================================================== -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/gallery.css">
+
+</head>
+
+<body>
+
+  <!-- =====================================================================
+     TOPBAR
+  ====================================================================== -->
+  <div id="topbar">
+    <div class="container topbar-inner">
+
+      <div class="topbar-info">
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" d="M12 6v6l4 2"/>
+          </svg>
+          Sun - Fri (7:00 - 18:00)
+        </span>
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M2.25 6.338c0-.414.336-.75.75-.75h2.25a.75.75 0 0 1 .743.647l.63 4.2a.75.75 0 0 1-.44.813l-1.27.508a11.25 11.25 0 0 0 5.38 5.38l.508-1.27a.75.75 0 0 1 .814-.44l4.2.63a.75.75 0 0 1 .647.743V18a.75.75 0 0 1-.75.75C9.716 18.75 2.25 11.284 2.25 6.338Z"/>
+          </svg>
+          <a href="tel:+18323456789">+1 832-345-6789</a>
+        </span>
+        <span class="topbar-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
+          </svg>
+          <a href="https://maps.google.com" target="_blank" rel="noopener">
+            22 Random Street, Houston, TX 77089
+          </a>
+        </span>
+      </div>
+
+      <div class="topbar-social">
+        <a href="#" aria-label="Twitter / X">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="X">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <!-- /TOPBAR -->
+
+
+  <!-- =====================================================================
+     NAVIGATION
+  ====================================================================== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+
+      <a href="../index.html" class="nav-logo"
+         aria-label="Meridian Pools — Home">
+        MERIDIAN POOLS
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+
+          <li>
+            <button class="nav-drop-toggle" aria-expanded="false"
+                    aria-haspopup="true">
+              Services
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none">
+                <a href="services/custom-builds.html" role="menuitem">
+                  Custom Pool Construction
+                </a>
+              </li>
+              <li role="none">
+                <a href="services/renovations.html" role="menuitem">
+                  Remodeling &amp; Renovation
+                </a>
+              </li>
+              <li role="none">
+                <a href="services/add-ons.html" role="menuitem">
+                  Luxury Features &amp; Add-Ons
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="quote.html" class="btn-primary">
+          Get Quote
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor"
+               aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+      </div>
+
+      <button class="nav-hamburger" aria-expanded="false"
+              aria-label="Open menu" aria-controls="mobile-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-drawer" id="mobile-drawer"
+           aria-label="Mobile navigation">
+
+        <button class="nav-drawer-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <button class="nav-drop-toggle" aria-expanded="false">
+              Services
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <ul class="nav-sub">
+              <li><a href="services/custom-builds.html">Custom Pool Construction</a></li>
+              <li><a href="services/renovations.html">Remodeling &amp; Renovation</a></li>
+              <li><a href="services/add-ons.html">Luxury Features &amp; Add-Ons</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-drawer-cta">
+          <a href="quote.html" class="btn-primary">
+            Get Quote
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main>
+
+    <!-- =====================================================================
+       PAGE HERO
+    ====================================================================== -->
+    <section id="page-hero">
+      <div class="container">
+        <h1>Our Company Gallery</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Gallery</span>
+        </nav>
+      </div>
+
+      <picture>
+        <source media="(max-width: 600px)"
+                srcset="../images/backgrounds/gallery-hero-m.webp">
+        <source media="(min-width: 601px)"
+                srcset="../images/backgrounds/gallery-hero.webp">
+        <img
+          aria-hidden="true"
+          src="../images/backgrounds/gallery-hero.jpg"
+          alt=""
+          width="1920"
+          height="600"
+          loading="eager"
+          decoding="async">
+      </picture>
+    </section>
+
+    <!-- Gallery sections go here -->
+
+<!-- ==================================================================
+   GALLERY SECTION
+=================================================================== -->
+<section id="gallery-main" class="section-padding">
+  <div class="container">
+
+    <!-- Filter tabs -->
+    <div class="gallery-tabs-wrap">
+      <div class="gal-tabs" role="tablist" aria-label="Gallery filters">
+        <button class="gal-tab active" data-filter="all" role="tab"
+                aria-selected="true">All</button>
+        <button class="gal-tab" data-filter="custom" role="tab"
+                aria-selected="false">Custom Pool Construction</button>
+        <button class="gal-tab" data-filter="renovation" role="tab"
+                aria-selected="false">Remodeling &amp; Renovation</button>
+        <button class="gal-tab" data-filter="luxury" role="tab"
+                aria-selected="false">Luxury Features &amp; Upgrades</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="gal-grid" id="galGrid">
+
+      <!-- Image 1 — Custom, Inground, Freeform, Concrete, Water+Fire -->
+      <div class="gal-item reveal fade-up delay-1"
+           data-category="custom"
+           data-type="inground"
+           data-style="freeform"
+           data-material="concrete"
+           data-addons="water,fire"
+           data-title="The Riverside Estate"
+           data-location="Katy, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-1-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-1.webp">
+          <img src="../images/assets/gallery/calc-1.jpg"
+               alt="The Riverside Estate — Katy, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">The Riverside Estate</h4>
+            <p class="gal-location">Katy, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 2 — Custom, Inground, Lagoon, Concrete, Water+Lighting+Tanning -->
+      <div class="gal-item reveal fade-up delay-2"
+           data-category="custom"
+           data-type="inground"
+           data-style="lagoon"
+           data-material="concrete"
+           data-addons="water,lighting,tanning"
+           data-title="The Woodlands Retreat"
+           data-location="Woodlands, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-5-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-5.webp">
+          <img src="../images/assets/gallery/calc-5.jpg"
+               alt="The Woodlands Retreat — Woodlands, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">The Woodlands Retreat</h4>
+            <p class="gal-location">Woodlands, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 3 — Custom, Inground, Geometric, Fiberglass, Lighting+Tanning -->
+      <div class="gal-item reveal fade-up delay-3"
+           data-category="custom"
+           data-type="inground"
+           data-style="geometric"
+           data-material="fiberglass"
+           data-addons="lighting,tanning"
+           data-title="The Memorial Modern"
+           data-location="Houston, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-2-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-2.webp">
+          <img src="../images/assets/gallery/calc-2.jpg"
+               alt="The Memorial Modern — Houston, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">The Memorial Modern</h4>
+            <p class="gal-location">Houston, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 4 — Custom, Inground, Infinity, Concrete, Lighting+Fire -->
+      <div class="gal-item reveal fade-up delay-1"
+           data-category="custom"
+           data-type="inground"
+           data-style="infinity"
+           data-material="concrete"
+           data-addons="lighting,fire"
+           data-title="Pearland Infinity Edge"
+           data-location="Pearland, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-3-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-3.webp">
+          <img src="../images/assets/gallery/calc-3.jpg"
+               alt="Pearland Infinity Edge — Pearland, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Pearland Infinity Edge</h4>
+            <p class="gal-location">Pearland, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 5 — Custom, Inground, Freeform, Pebble, Water+Fire+Tanning -->
+      <div class="gal-item reveal fade-up delay-2"
+           data-category="custom"
+           data-type="inground"
+           data-style="freeform"
+           data-material="pebble"
+           data-addons="water,fire,tanning"
+           data-title="Sugar Land Oasis"
+           data-location="Sugar Land, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-4-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-4.webp">
+          <img src="../images/assets/gallery/calc-4.jpg"
+               alt="Sugar Land Oasis — Sugar Land, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Sugar Land Oasis</h4>
+            <p class="gal-location">Sugar Land, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 6 — Renovation, Inground, Freeform, Pebble, Water+Lighting+Fire -->
+      <div class="gal-item reveal fade-up delay-3"
+           data-category="renovation"
+           data-type="inground"
+           data-style="freeform"
+           data-material="pebble"
+           data-addons="water,lighting,fire"
+           data-title="Heights Renovation"
+           data-location="Houston, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-7-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-7.webp">
+          <img src="../images/assets/gallery/calc-7.jpg"
+               alt="Heights Renovation — Houston, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Heights Renovation</h4>
+            <p class="gal-location">Houston, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 7 — Renovation, Inground, Geometric, Concrete, Automation+Lighting -->
+      <div class="gal-item reveal fade-up delay-1"
+           data-category="renovation"
+           data-type="inground"
+           data-style="geometric"
+           data-material="concrete"
+           data-addons="automation,lighting"
+           data-title="Bellaire Remodel"
+           data-location="Bellaire, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-8-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-8.webp">
+          <img src="../images/assets/gallery/calc-8.jpg"
+               alt="Bellaire Remodel — Bellaire, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Bellaire Remodel</h4>
+            <p class="gal-location">Bellaire, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 8 — Renovation, Inground, Lagoon, Concrete, Water+Tanning+Fire -->
+      <div class="gal-item reveal fade-up delay-2"
+           data-category="renovation"
+           data-type="inground"
+           data-style="lagoon"
+           data-material="concrete"
+           data-addons="water,tanning,fire"
+           data-title="Friendswood Lagoon Refresh"
+           data-location="Friendswood, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-12-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-12.webp">
+          <img src="../images/assets/gallery/calc-12.jpg"
+               alt="Friendswood Lagoon Refresh — Friendswood, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Friendswood Lagoon Refresh</h4>
+            <p class="gal-location">Friendswood, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 9 — Renovation, Inground, Infinity, Pebble, Water+Lighting+Fire -->
+      <div class="gal-item reveal fade-up delay-3"
+           data-category="renovation"
+           data-type="inground"
+           data-style="infinity"
+           data-material="pebble"
+           data-addons="water,lighting,fire"
+           data-title="Tanglewood Infinity Refresh"
+           data-location="Houston, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-10-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-10.webp">
+          <img src="../images/assets/gallery/calc-10.jpg"
+               alt="Tanglewood Infinity Refresh — Houston, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Tanglewood Infinity Refresh</h4>
+            <p class="gal-location">Houston, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 10 — Luxury, Inground, Geometric, Fiberglass, Lighting+Automation -->
+      <div class="gal-item reveal fade-up delay-1"
+           data-category="luxury"
+           data-type="inground"
+           data-style="geometric"
+           data-material="fiberglass"
+           data-addons="lighting,automation"
+           data-title="River Oaks LED Feature"
+           data-location="Houston, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-6-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-6.webp">
+          <img src="../images/assets/gallery/calc-6.jpg"
+               alt="River Oaks LED Feature — Houston, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">River Oaks LED Feature</h4>
+            <p class="gal-location">Houston, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 11 — Luxury, Spa, Geometric, Pebble, Lighting+Automation -->
+      <div class="gal-item reveal fade-up delay-2"
+           data-category="luxury"
+           data-type="spa"
+           data-style="geometric"
+           data-material="pebble"
+           data-addons="lighting,automation"
+           data-title="Montrose Spa Upgrade"
+           data-location="Houston, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-9-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-9.webp">
+          <img src="../images/assets/gallery/calc-9.jpg"
+               alt="Montrose Spa Upgrade — Houston, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Montrose Spa Upgrade</h4>
+            <p class="gal-location">Houston, TX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 12 — Luxury, Plunge, Geometric, Fiberglass, Lighting -->
+      <div class="gal-item reveal fade-up delay-3"
+           data-category="luxury"
+           data-type="plunge"
+           data-style="geometric"
+           data-material="fiberglass"
+           data-addons="lighting"
+           data-title="Midtown Plunge Pool"
+           data-location="Houston, TX">
+        <picture>
+          <source media="(max-width: 600px)"
+                  srcset="../images/assets/gallery/calc-11-m.webp">
+          <source media="(min-width: 601px)"
+                  srcset="../images/assets/gallery/calc-11.webp">
+          <img src="../images/assets/gallery/calc-11.jpg"
+               alt="Midtown Plunge Pool — Houston, TX"
+               width="580" height="440"
+               loading="lazy" decoding="async">
+        </picture>
+        <div class="gal-overlay">
+          <div class="gal-info">
+            <h4 class="gal-title">Midtown Plunge Pool</h4>
+            <p class="gal-location">Houston, TX</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /gal-grid -->
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="galLightbox" role="dialog"
+     aria-modal="true" aria-label="Project image">
+  <button class="lightbox-close" id="galLightboxClose"
+          aria-label="Close image">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+  <div class="lightbox-inner">
+    <img id="galLightboxImg" src="" alt="" loading="lazy">
+    <p class="lightbox-caption" id="galLightboxCaption"></p>
+  </div>
+</div>
+<!-- /GALLERY -->
+
+
+
+<!-- ==================================================================
+   FINAL CTA SECTION
+   Light blue bg, image left with floating circles, content right.
+   Mobile: text first, image second.
+=================================================================== -->
+<section id="cta-final" class="section-padding">
+  <div class="container cta-final-inner">
+
+    <!-- Left — image + decorative circles (hidden on mobile, shown on desktop) -->
+    <div class="cta-final-img-col reveal fade-right">
+      <!-- Decorative floating circles -->
+      <div class="cta-circle cta-circle-1" aria-hidden="true"></div>
+      <div class="cta-circle cta-circle-2" aria-hidden="true"></div>
+
+      <picture class="cta-final-img-wrap">
+        <source media="(max-width: 600px)"
+                srcset="images/assets/cta-final-m.webp">
+        <source media="(min-width: 601px)"
+                srcset="images/assets/cta-final.webp">
+        <img
+          src="images/assets/cta-final.jpg"
+          alt="Meridian Pools craftsman finishing pool coping"
+          width="480"
+          height="560"
+          loading="lazy"
+          decoding="async">
+      </picture>
+    </div>
+
+    <!-- Right — content -->
+    <div class="cta-final-content reveal fade-left">
+      <p class="eyebrow cta-final-eyebrow">Ready to Get Started?</p>
+      <h2>Your Dream Backyard Is One Conversation Away.</h2>
+      <p class="cta-final-body">
+        Answer 10 quick questions about your project and we'll send you a
+        custom welcome package instantly. Based on your answers, our team
+        will follow up with a detailed quote within 24 to 48 hours. No
+        pressure, no commitment, completely free.
+      </p>
+      <a href="quote.html" class="btn-primary">
+        Get a Quote
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor"
+             aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- /FINAL CTA -->
+
+
+  </main>
+
+
+  <!-- =====================================================================
+     FOOTER
+  ====================================================================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <h4>MERIDIAN POOLS</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+            sit amet consectetur adipiscing elit quisque faucibus.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="currentColor" aria-hidden="true">
+                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-nav">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services/custom-builds.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Get In Touch</h4>
+          <address>
+            <p>12345 Random St Drive<br>Houston, TX</p>
+            <a href="tel:+18323451234">(832) 345-1234</a>
+            <a href="mailto:info@gmail.com">Info@gmail.com</a>
+          </address>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get the latest updates and offers for our services yearly.</p>
+          <form class="footer-form" action="#" method="POST"
+                aria-label="Newsletter signup">
+            <label for="footer-email-gallery" class="sr-only">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="footer-email-gallery"
+              name="email"
+              placeholder="Email your email"
+              autocomplete="email"
+              required>
+            <button type="submit" class="btn-primary">
+              Submit Now
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                   aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Meridian Pools. All rights reserved.
+          Designed by MigsFlow Web Design.</p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+  <button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- =====================================================================
+     SCRIPTS
+  ====================================================================== -->
+  <script defer src="/js/main.js"></script>
+  <script defer src="/js/gallery-filter.js"></script>
+
+</body>
+</html>

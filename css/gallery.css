@@ -1,0 +1,301 @@
+/* =============================================================================
+   MERIDIAN POOLS — gallery.css
+   MigsFlow Web Design
+
+   Gallery page specific styles only.
+   global.css + components.css + animations.css must load before this file.
+
+   MOBILE FIRST — base styles target mobile.
+
+   TABLE OF CONTENTS
+   01. Page Hero (image override only — layout in components.css)
+   02. Gallery Section (to be built)
+============================================================================= */
+
+
+/* =============================================================================
+   01 — PAGE HERO IMAGE OVERRIDE
+============================================================================= */
+
+/* No overrides needed — components.css handles everything. */
+
+
+/* =============================================================================
+   02 — GALLERY SECTION
+   Styles will be added here as sections are built.
+============================================================================= */
+
+
+/* =============================================================================
+   02 — GALLERY SECTION
+============================================================================= */
+
+#gallery-main {
+  background-color: var(--bg-100);
+  overflow: hidden;
+}
+
+/* ── Filter tabs — scrollable on mobile ──────────────────────────────────── */
+.gallery-tabs-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-xs);
+}
+
+.gallery-tabs-wrap::-webkit-scrollbar {
+  display: none;
+}
+.gal-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%; /* remove max-content — this was preventing wrap */
+}
+
+@media (min-width: 1025px) {
+  .gal-tabs {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.gal-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.5rem 1.125rem;
+  border-radius: 20px;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  background-color: transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: #002E5C;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.gal-tab:hover {
+  background-color: rgba(219, 237, 255, 0.45);
+  border-color: rgba(0, 46, 92, 0.25);
+}
+
+.gal-tab.active {
+  background-color: rgba(219, 237, 255, 0.68);
+  border-color: rgba(0, 46, 92, 0.25);
+  font-weight: 600;
+}
+
+/* Active dot */
+.gal-tab.active::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #002E5C;
+  flex-shrink: 0;
+}
+
+/* ── Grid — mobile: 1 col, tablet: 2 col, desktop: 3 col ─────────────────── */
+.gal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .gal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .gal-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Individual item ─────────────────────────────────────────────────────── */
+.gal-item {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.gal-item.hidden {
+  display: none;
+}
+
+.gal-item picture,
+.gal-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--radius-card);
+  background-color: var(--bg-300);
+  transition: transform 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  .gal-item picture,
+  .gal-item img {
+    height: 360px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .gal-item picture,
+  .gal-item img {
+    height: 420px;
+  }
+}
+
+.gal-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Overlay — Figma gradient spec ──────────────────────────────────────── */
+/* Layer 1: Linear #004FB6 100% → #666666 5% (0%–36%)
+   Layer 2: Black 20% solid
+   Layer 3: Image (handled by <img>) */
+.gal-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 79, 182, 1) 0%,
+      rgba(102, 102, 102, 0.05) 36%
+    ),
+    rgba(0, 0, 0, 0.20);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.gal-item:hover .gal-overlay {
+  opacity: 0.85;
+}
+
+/* ── Project info — bottom left ──────────────────────────────────────────── */
+.gal-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  pointer-events: none;
+}
+
+.gal-title {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.gal-location {
+  font-size: var(--fs-caption);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: none;
+}
+
+/* ── Lightbox ────────────────────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .lightbox {
+    padding: var(--space-xl);
+  }
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-base);
+  z-index: 2;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.lightbox-close svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.lightbox-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+#galLightboxImg {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-card);
+  display: block;
+}
+
+.lightbox-caption {
+  font-size: var(--fs-body-sm);
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  max-width: none;
+}

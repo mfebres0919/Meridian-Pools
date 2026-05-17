@@ -498,3 +498,31 @@ p.lead {
   width: 1.25rem;
   height: 1.25rem;
 }
+
+
+
+/* ── Ghost dark button — left to right fill on hover ─────────────────────── */
+.btn-ghost-dark {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.btn-ghost-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--blue);
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+}
+
+.btn-ghost-dark:hover::before {
+  transform: translateX(0);
+}
+
+.btn-ghost-dark:hover {
+  border-color: var(--blue) !important;
+  color: var(--white);
+}

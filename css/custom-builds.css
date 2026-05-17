@@ -1,0 +1,740 @@
+/* =============================================================================
+   MERIDIAN POOLS — custom-builds.css
+   MigsFlow Web Design
+
+   Custom Pool Construction page specific styles only.
+   global.css + components.css + animations.css must load before this file.
+
+   MOBILE FIRST — base styles target mobile.
+
+   TABLE OF CONTENTS
+   01. Page Hero (image override only — layout in components.css)
+   02. Budget Calculator Section
+============================================================================= */
+
+
+/* =============================================================================
+   01 — PAGE HERO IMAGE OVERRIDE
+   Only the background image path changes per service page.
+   All layout, overlay, and breadcrumb styles live in components.css.
+============================================================================= */
+
+/* No overrides needed — components.css handles everything.
+   Add page-specific section styles below as sections are built. */
+
+
+/* =============================================================================
+   02 — BUDGET CALCULATOR SECTION
+============================================================================= */
+
+#calculator {
+  overflow-x: hidden;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.calc-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-3xl);
+}
+
+.calc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+/* Blue squares on either side of eyebrow */
+.calc-eyebrow span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--blue);
+  flex-shrink: 0;
+}
+
+.calc-subtext {
+  font-size: var(--fs-body);
+  color: var(--text-700);
+  max-width: 56ch;
+  text-align: center;
+  line-height: var(--lh-body);
+}
+
+@media (min-width: 768px) {
+  .calc-subtext {
+    font-size: var(--fs-body-lg);
+  }
+}
+
+/* ── Layout — mobile: stacked, tablet+: side by side ─────────────────────── */
+.calc-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .calc-layout {
+    grid-template-columns: 320px 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .calc-layout {
+    grid-template-columns: 360px 1fr;
+  }
+}
+
+/* ── Filter panel ────────────────────────────────────────────────────────── */
+.calc-filters-panel {
+  background-color: var(--bg-300);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Sticky on tablet+ so it stays visible while scrolling results */
+@media (min-width: 768px) {
+  .calc-filters-panel {
+    position: sticky;
+    top: 5rem;
+    /* No max-height, no overflow — just sticky */
+  }
+}
+
+
+/* Panel header */
+.calc-filters-header {
+  background-color: var(--bg-600);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-filters-title {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* Reset button */
+.calc-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--text-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-base);
+}
+
+.calc-reset:hover {
+  color: var(--white);
+}
+
+.calc-reset svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* ── Individual filter section ───────────────────────────────────────────── */
+.calc-section {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.calc-section:last-child {
+  border-bottom: none;
+}
+
+/* Section toggle button */
+.calc-section-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition-base);
+}
+
+.calc-section-toggle:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+
+/* Number badge */
+.calc-section-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-600);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.calc-section-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  color: var(--text-600);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.calc-multiselect {
+  font-size: 0.7rem;
+  color: var(--text-700);
+  font-style: italic;
+}
+
+/* Chevron */
+.calc-section-chevron {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-700);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.calc-section.collapsed .calc-section-chevron {
+  transform: rotate(-90deg);
+}
+
+/* Section body — collapsible */
+.calc-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: 0 var(--space-md) var(--space-md);
+  max-height: 400px;
+  overflow: hidden;
+  transition:
+    max-height 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    padding 0.35s ease;
+}
+
+.calc-section.collapsed .calc-section-body {
+  max-height: 0;
+  padding-bottom: 0;
+}
+
+/* ── Filter option (checkbox row) ────────────────────────────────────────── */
+.calc-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.625rem var(--space-sm);
+  border-radius: 8px;
+  border: 0.3px solid rgba(0,0,0,0.15);
+  background-color: var(--bg-100);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+  position: relative;
+}
+
+.calc-option:hover {
+  background-color: var(--bg-500);
+}
+
+/* Selected state */
+.calc-option.selected {
+  background-color: var(--bg-500);
+  border-color: var(--blue);
+}
+
+/* Icon */
+.calc-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.calc-option-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Label */
+.calc-option-label {
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: var(--text-600);
+  flex: 1;
+  pointer-events: none;
+}
+
+/* Addon price tag */
+.calc-addon-price {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--blue);
+  margin-right: var(--space-xs);
+  pointer-events: none;
+}
+
+/* Checkmark box */
+.calc-option-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 3px;
+  border: 1.5px solid rgba(0,0,0,0.2);
+  flex-shrink: 0;
+  pointer-events: none;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.calc-option-check svg {
+  width: 0.7rem;
+  height: 0.7rem;
+  color: transparent;
+  transition: color var(--transition-base);
+}
+
+.calc-option.selected .calc-option-check {
+  background-color: var(--bg-400);
+  border-color: var(--bg-400);
+}
+
+.calc-option.selected .calc-option-check svg {
+  color: var(--white);
+}
+
+/* Hide actual checkbox input — label handles interaction */
+.calc-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* ── Results panel ───────────────────────────────────────────────────────── */
+.calc-results-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  min-width: 0;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg);
+}
+
+/* Results header */
+.calc-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-results-title {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 700;
+  color: #002E5C;
+}
+
+.calc-results-count {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--bg-500);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--text-100);
+}
+
+.calc-results-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--bg-600);
+  flex-shrink: 0;
+}
+
+/* ── Image gallery grid ──────────────────────────────────────────────────── */
+.calc-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+@media (min-width: 600px) {
+  .calc-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.calc-img-item {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  line-height: 0;
+  background-color: var(--bg-300);
+  transition: opacity 0.3s ease;
+}
+
+.calc-img-item.hidden {
+  display: none;
+}
+
+.calc-img-item.span-full {
+  grid-column: 1 / -1;
+}
+
+.calc-img-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+.calc-img-item.span-full img {
+  height: 320px;
+}
+
+@media (min-width: 768px) {
+  .calc-img-item img {
+    height: 220px;
+  }
+
+  .calc-img-item.span-full img {
+    height: 360px;
+  }
+}
+
+/* No results */
+.calc-no-results {
+  text-align: center;
+  padding: var(--space-3xl);
+  color: var(--text-700);
+  font-size: var(--fs-body-sm);
+  grid-column: 1 / -1;
+}
+
+/* ── Estimated range card ────────────────────────────────────────────────── */
+.calc-estimate {
+  border-radius: var(--radius-card);
+  background-color: var(--bg-400);
+  overflow: hidden;
+  width: 100%;
+}
+
+.calc-estimate-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.calc-estimate-title {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.calc-estimate-live {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--fs-caption);
+  color: var(--text-500);
+}
+
+.calc-estimate-body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background-color: var(--bg-100);
+  align-items: stretch;
+}
+
+/* Price range */
+.calc-estimate-range {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--text-100);
+  letter-spacing: var(--ls-heading);
+  line-height: 1;
+  max-width: none;
+}
+
+/* Tags */
+.calc-estimate-tags {
+  font-size: var(--fs-caption);
+  color: var(--text-700);
+  max-width: none;
+}
+
+/* Breakdown boxes — mobile: single col, 480px+: 3 cols */
+.calc-estimate-breakdown {
+  display: grid;
+  grid-template-columns: 1fr; /* always single col on mobile */
+  gap: var(--space-sm);
+}
+
+@media (min-width: 1025px) {
+  .calc-estimate-breakdown {
+    grid-template-columns: repeat(3, 1fr); /* 3 cols on desktop only */
+  }
+}
+
+.calc-breakdown-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-sm) var(--space-md);
+  border: 0.5px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+.calc-breakdown-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-700);
+}
+
+.calc-breakdown-value {
+  font-size: var(--fs-body-sm);
+  font-weight: 700;
+  color: var(--text-200);
+}
+
+/* Selected add-ons row */
+.calc-selected-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  font-size: var(--fs-body-sm);
+  color: var(--text-600);
+}
+
+.calc-selected-row svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+/* ── CTA buttons — stacked mobile, row on 480px+ ─────────────────────────── */
+.calc-estimate-btns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.calc-quote-btn,
+.calc-save-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 880px) {
+  .calc-estimate-btns {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .calc-quote-btn {
+    flex: 1;
+    width: auto;
+  }
+
+  .calc-save-btn {
+    width: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+/* ── Luxury add-ons link — separate container ────────────────────────────── */
+.calc-luxury-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background-color: #DBEDFF;
+  border: 0.8px solid #002E5C;
+  border-radius: var(--radius-card);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+.calc-luxury-link svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.calc-luxury-link span {
+  font-size: var(--fs-body-sm);
+  color: var(--blue);
+  flex: 1;
+}
+
+.calc-luxury-link a {
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-base);
+}
+
+.calc-luxury-link a:hover {
+  color: var(--blue-hover);
+}
+
+/* ── Disclaimer — separate container ─────────────────────────────────────── */
+.calc-disclaimer {
+  padding: var(--space-lg);
+  font-size: var(--fs-body-sm);
+  color: var(--text-600);
+  line-height: var(--lh-body);
+  max-width: none;
+  background-color: #D9D9D9;
+  border: 0.3px solid #7F7F7F;
+  border-radius: var(--radius-card);
+  margin-top: var(--space-md);
+}
+
+.calc-disclaimer a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+
+
+
+/* =============================================================================
+   PRINT STYLES — Save Estimate PDF
+============================================================================= */
+
+@media print {
+  /* Hide everything except the estimate card */
+  #topbar,
+  #navbar,
+  #page-hero,
+  .calc-header,
+  .calc-filters-panel,
+  .calc-results-header,
+  .calc-gallery,
+  .calc-no-results,
+  .calc-estimate-btns,
+  .calc-luxury-link,
+  #footer,
+  .scroll-top-btn {
+    display: none !important;
+  }
+
+  /* Reset layout to single column */
+  .calc-layout {
+    display: block !important;
+  }
+
+  .calc-results-panel {
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  /* Estimate card — clean print layout */
+  .calc-estimate {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    page-break-inside: avoid;
+  }
+
+  .calc-estimate-body {
+    padding: 1.5rem !important;
+  }
+
+  /* Breakdown boxes — always 3 col in print */
+  .calc-estimate-breakdown {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Disclaimer — clean print */
+  .calc-disclaimer {
+    border: 1px solid #ccc !important;
+    background-color: #f5f5f5 !important;
+    margin-top: 1rem;
+    page-break-inside: avoid;
+  }
+
+  /* Add Meridian Pools branding at top of print */
+  #calculator::before {
+    content: 'MERIDIAN POOLS — Custom Pool Estimate';
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #002E5C;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #056BF0;
+  }
+
+  /* General page setup */
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  body {
+    font-size: 12pt;
+  }
+}

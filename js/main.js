@@ -399,3 +399,110 @@ const slideTeamTo = (index) => {
   window.addEventListener('resize', () => slideTeamTo(0));
   updateTeamBtns();
 }
+
+
+
+/* ===========================================================================
+   RENOVATION — View Details smooth scroll + before/after tab activation
+=========================================================================== */
+document.querySelectorAll('.wwd-view-details').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.getElementById('before-after');
+    if (!target) return;
+
+    e.preventDefault();
+
+    // Get which reno type this card is
+    const card = link.closest('.wwd-card');
+    const renoId = card ? card.id : null; // e.g. "reno-replastering"
+
+    // Scroll to before-after section
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // After scroll, activate matching tab if it exists
+    if (renoId) {
+      setTimeout(() => {
+        const tabValue = renoId.replace('reno-', ''); // "replastering"
+        const matchingTab = document.querySelector(
+          `.ba-tab[data-filter="${tabValue}"]`
+        );
+        if (matchingTab) matchingTab.click();
+      }, 600); // delay lets scroll settle first
+    }
+  });
+});
+
+
+
+/* ===========================================================================
+   LUXURY FEATURES — tab switcher + mobile carousel
+=========================================================================== */
+const lfTabs   = document.querySelectorAll('.lf-tab');
+const lfPanels = document.querySelectorAll('.lf-panel');
+
+if (lfTabs.length) {
+
+  /* Tab switching */
+  lfTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const cat = tab.dataset.category;
+
+      lfTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      lfPanels.forEach(panel => {
+        panel.classList.remove('active');
+      });
+      const target = document.querySelector(`.lf-panel[data-panel="${cat}"]`);
+      if (target) target.classList.add('active');
+    });
+  });
+
+  /* Mobile carousel — prev/next per grid */
+  document.querySelectorAll('.lf-nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const gridId = btn.dataset.grid;
+      const dir    = btn.dataset.dir;
+      const grid   = document.getElementById(gridId);
+      if (!grid) return;
+
+      const cards    = grid.querySelectorAll('.lf-card');
+      if (!cards.length) return;
+
+      /* Only runs on mobile — grid uses flex carousel */
+      if (window.innerWidth >= 768) return;
+
+      const card     = cards[0];
+      const gap      = parseInt(getComputedStyle(grid).gap) || 0;
+      const cardW    = card.offsetWidth + gap;
+      const current  = grid._lfIndex || 0;
+      const maxIndex = cards.length - 1;
+      const next     = dir === 'next'
+        ? Math.min(current + 1, maxIndex)
+        : Math.max(current - 1, 0);
+
+      grid._lfIndex = next;
+      grid.style.transform = `translateX(-${next * cardW}px)`;
+
+      /* Update disabled state */
+      const prevBtn = btn.closest('.lf-nav').querySelector('[data-dir="prev"]');
+      const nextBtn = btn.closest('.lf-nav').querySelector('[data-dir="next"]');
+      if (prevBtn) prevBtn.disabled = next === 0;
+      if (nextBtn) nextBtn.disabled = next === maxIndex;
+    });
+  });
+
+  /* Reset carousel index on resize to tablet+ */
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      document.querySelectorAll('.lf-grid').forEach(grid => {
+        grid._lfIndex = 0;
+        grid.style.transform = '';
+      });
+    }
+  });
+}
