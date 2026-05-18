@@ -14,9 +14,9 @@
   ====================================================================== -->
 
   <!-- Preload hero background images (above the fold — never lazy load) -->
-  <link rel="preload" as="image" href="images/backgrounds/hero-m.webp"
+  <link rel="preload" as="image" href="images/home/webp/home-hero-m.webp"
         media="(max-width: 600px)">
-  <link rel="preload" as="image" href="images/backgrounds/hero.webp"
+  <link rel="preload" as="image" href="images/home/webp/home-hero-d.webp"
         media="(min-width: 601px)">
 
   <!-- Preload critical fonts (only weights used above the fold) -->
@@ -301,9 +301,24 @@
           </div>
 
           <!-- Pricing note -->
-          <p class="hero-pricing-note">
-            <em>Custom projects typically start around $80k+ · Financing Available</em>
-          </p>
+          <div class="hero-pricing-note">
+            <span class="hero-pricing-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Custom projects start at $80k+
+            </span>
+            <span class="hero-pricing-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Financing Available
+            </span>
+          </div>
 
         </div>
         <!-- /hero-content -->
@@ -322,12 +337,12 @@
               <picture>
                 <!-- Mobile crop -->
                 <source media="(max-width: 600px)"
-                        srcset="images/headshots/owner-m.webp">
+                        srcset="images/home/webp/video-card-img-m.webp">
                 <!-- Desktop -->
                 <source media="(min-width: 601px)"
-                        srcset="images/headshots/owner.webp">
+                        srcset="images/home/webp/video-card-img-d.webp">
                 <img
-                  src="images/headshots/owner.jpg"
+                  src="images/home/jpeg/video-card-img-d.jpeg"
                   alt="Meridian Pools owner"
                   width="220"
                   height="220"
@@ -400,13 +415,13 @@
       <picture class="hero-bg">
         <!-- Mobile: center-cropped for portrait screens -->
         <source media="(max-width: 600px)"
-                srcset="images/backgrounds/hero-m.webp">
+                srcset="images/home/webp/home-hero-m.webp">
         <!-- Desktop -->
         <source media="(min-width: 601px)"
-                srcset="images/backgrounds/hero.webp">
+                srcset="images/home/webp/home-hero-d.webp">
         <img
           aria-hidden="true"
-          src="images/backgrounds/hero.jpg"
+          src="images/home/jpeg/home-hero-d.jpeg"
           alt=""
           width="1920"
           height="900"
@@ -532,11 +547,11 @@
       <div class="about-img-wrap">
         <picture>
           <source media="(max-width: 600px)"
-                  srcset="images/assets/about-pool-m.webp">
+                  srcset="images/home/webp/about-pool-m.webp">
           <source media="(min-width: 601px)"
-                  srcset="images/assets/about-pool.webp">
+                  srcset="images/home/webp/about-pool-d.webp">
           <img
-            src="images/assets/about-pool.jpg"
+            src="images/home/jpeg/about-pool-d.jpeg"
             alt="Custom gunite pool built by Meridian Pools"
             width="640"
             height="520"
@@ -676,11 +691,11 @@
         <div class="about-video img-zoom">
           <picture>
             <source media="(max-width: 600px)"
-                    srcset="images/assets/about-video-m.webp">
+                    srcset="images/home/webp/about-video-m.webp">
             <source media="(min-width: 601px)"
-                    srcset="images/assets/about-video.webp">
+                    srcset="images/home/webp/about-video-d.webp">
             <img
-              src="images/assets/about-video.jpg"
+              src="images/home/jpeg/about-video-d.jpeg"
               alt="Meridian Pools construction process"
               width="340"
               height="200"
@@ -754,12 +769,12 @@
         <!-- Background image (CodeStitch lazy-load method) -->
         <picture class="cta1-bg">
             <source media="(max-width: 600px)"
-                    srcset="images/backgrounds/cta1-m.webp">
+                    srcset="images/home/webp/home-cta-1-m.webp">
             <source media="(min-width: 601px)"
-                    srcset="images/backgrounds/cta1.webp">
+                    srcset="images/home/webp/home-cta-1-d.webp">
             <img
             aria-hidden="true"
-            src="images/backgrounds/cta1.jpg"
+            src="images/home/jpeg/home-cta-1-d.jpeg"
             alt=""
             width="1920"
             height="700"
@@ -797,9 +812,9 @@
         <div class="service-card reveal fade-up delay-1">
           <div class="service-card-img img-zoom">
             <picture>
-              <source media="(max-width: 600px)" srcset="images/services/custom-builds-m.webp">
-              <source media="(min-width: 601px)" srcset="images/services/custom-builds.webp">
-              <img src="images/services/custom-builds.jpg"
+              <source media="(max-width: 600px)" srcset="images/home/webp/services-custom-m.webp">
+              <source media="(min-width: 601px)" srcset="images/home/webp/services-custom-d.webp">
+              <img src="images/home/jpeg/services-custom-d.jpeg"
                    alt="Custom pool construction"
                    width="480" height="380"
                    loading="lazy" decoding="async">
@@ -824,9 +839,9 @@
         <div class="service-card reveal fade-up delay-2">
           <div class="service-card-img img-zoom">
             <picture>
-              <source media="(max-width: 600px)" srcset="images/services/renovations-m.webp">
-              <source media="(min-width: 601px)" srcset="images/services/renovations.webp">
-              <img src="images/services/renovations.jpg"
+              <source media="(max-width: 600px)" srcset="images/home/webp/services-renovation-m.webp">
+              <source media="(min-width: 601px)" srcset="images/home/webp/services-renovation-d.webp">
+              <img src="images/home/jpeg/services-renovation-d.jpeg"
                    alt="Pool remodeling and renovation"
                    width="480" height="380"
                    loading="lazy" decoding="async">
@@ -851,9 +866,9 @@
         <div class="service-card reveal fade-up delay-3">
           <div class="service-card-img img-zoom">
             <picture>
-              <source media="(max-width: 600px)" srcset="images/services/add-ons-m.webp">
-              <source media="(min-width: 601px)" srcset="images/services/add-ons.webp">
-              <img src="images/services/add-ons.jpg"
+              <source media="(max-width: 600px)" srcset="images/home/webp/services-add-ons-m.webp">
+              <source media="(min-width: 601px)" srcset="images/home/webp/services-add-ons-d.webp">
+              <img src="images/home/jpeg/services-add-ons-d.jpeg"
                    alt="Luxury pool features and add-ons"
                    width="480" height="380"
                    loading="lazy" decoding="async">
@@ -1043,14 +1058,14 @@
 
         <!-- Card: All + Custom -->
         <div class="project-card" data-category="custom"
-             data-img="images/assets/gallery/riverside-estate.jpg"
+             data-img="images/home/jpeg/home-projects-1-d.jpeg"
              data-title="The Riverside Estate">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/riverside-estate-m.webp">
+                    srcset="images/home/webp/home-projects-1-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/riverside-estate.webp">
-            <img src="images/assets/gallery/riverside-estate.jpg"
+                    srcset="images/home/webp/home-projects-1-d.webp">
+            <img src="images/home/jpeg/home-projects-1-d.jpeg"
                  alt="The Riverside Estate pool — Katy, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1064,14 +1079,14 @@
 
         <!-- Card: All + Custom -->
         <div class="project-card" data-category="custom"
-             data-img="images/assets/gallery/woodlands-retreat.jpg"
+             data-img="images/home/jpeg/home-projects-2-d.jpeg"
              data-title="The Woodlands Retreat">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/woodlands-retreat-m.webp">
+                    srcset="images/home/webp/home-projects-2-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/woodlands-retreat.webp">
-            <img src="images/assets/gallery/woodlands-retreat.jpg"
+                    srcset="images/home/webp/home-projects-2-d.webp">
+            <img src="images/home/jpeg/home-projects-2-d.jpeg"
                  alt="The Woodlands Retreat pool — Woodlands, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1085,14 +1100,14 @@
 
         <!-- Card: All + Custom -->
         <div class="project-card" data-category="custom"
-             data-img="images/assets/gallery/memorial-modern.jpg"
+             data-img="images/home/jpeg/home-projects-3-d.jpeg"
              data-title="The Memorial Modern">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/memorial-modern-m.webp">
+                    srcset="images/home/webp/home-projects-3-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/memorial-modern.webp">
-            <img src="images/assets/gallery/memorial-modern.jpg"
+                    srcset="images/home/webp/home-projects-3-d.webp">
+            <img src="images/home/jpeg/home-projects-3-d.jpeg"
                  alt="The Memorial Modern pool — Houston, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1106,14 +1121,14 @@
 
         <!-- Card: Renovation -->
         <div class="project-card" data-category="renovation"
-             data-img="images/assets/gallery/sugar-land-refresh.jpg"
+             data-img="images/home/jpeg/home-projects-4-d.jpeg"
              data-title="The Sugar Land Refresh">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/sugar-land-refresh-m.webp">
+                    srcset="images/home/webp/home-projects-4-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/sugar-land-refresh.webp">
-            <img src="images/assets/gallery/sugar-land-refresh.jpg"
+                    srcset="images/home/webp/home-projects-4-d.webp">
+            <img src="images/home/jpeg/home-projects-4-d.jpeg"
                  alt="The Sugar Land Refresh — Sugar Land, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1127,14 +1142,14 @@
 
         <!-- Card: Renovation -->
         <div class="project-card" data-category="renovation"
-             data-img="images/assets/gallery/pearland-revival.jpg"
+             data-img="images/home/jpeg/home-projects-5-d.jpeg"
              data-title="The Pearland Revival">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/pearland-revival-m.webp">
+                    srcset="images/home/webp/home-projects-5-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/pearland-revival.webp">
-            <img src="images/assets/gallery/pearland-revival.jpg"
+                    srcset="images/home/webp/home-projects-5-d.webp">
+            <img src="images/home/jpeg/home-projects-5-d.jpeg"
                  alt="The Pearland Revival — Pearland, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1148,14 +1163,14 @@
 
         <!-- Card: Renovation -->
         <div class="project-card" data-category="renovation"
-             data-img="images/assets/gallery/cypress-classic.jpg"
+             data-img="images/home/jpeg/home-projects-1-d.jpeg"
              data-title="The Cypress Classic">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/cypress-classic-m.webp">
+                    srcset="images/home/webp/home-projects-1-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/cypress-classic.webp">
-            <img src="images/assets/gallery/cypress-classic.jpg"
+                    srcset="images/home/webp/home-projects-1-d.webp">
+            <img src="images/home/jpeg/home-projects-1-d.jpeg"
                  alt="The Cypress Classic — Cypress, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1169,14 +1184,14 @@
 
         <!-- Card: Luxury -->
         <div class="project-card" data-category="luxury"
-             data-img="images/assets/gallery/tanglewood-oasis.jpg"
+             data-img="images/home/jpeg/home-projects-2-d.jpeg"
              data-title="The Tanglewood Oasis">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/tanglewood-oasis-m.webp">
+                    srcset="images/home/webp/home-projects-2-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/tanglewood-oasis.webp">
-            <img src="images/assets/gallery/tanglewood-oasis.jpg"
+                    srcset="images/home/webp/home-projects-2-d.webp">
+            <img src="images/home/jpeg/home-projects-2-d.jpeg"
                  alt="The Tanglewood Oasis — Houston, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1190,14 +1205,14 @@
 
         <!-- Card: Luxury -->
         <div class="project-card" data-category="luxury"
-             data-img="images/assets/gallery/river-oaks-resort.jpg"
+             data-img="images/home/jpeg/home-projects-3-d.jpeg"
              data-title="The River Oaks Resort">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/river-oaks-resort-m.webp">
+                    srcset="images/home/webp/home-projects-3-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/river-oaks-resort.webp">
-            <img src="images/assets/gallery/river-oaks-resort.jpg"
+                    srcset="images/home/webp/home-projects-3-d.webp">
+            <img src="images/home/jpeg/home-projects-3-d.jpeg"
                  alt="The River Oaks Resort — Houston, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1211,14 +1226,14 @@
 
         <!-- Card: Luxury -->
         <div class="project-card" data-category="luxury"
-             data-img="images/assets/gallery/spring-valley-spa.jpg"
+             data-img="images/home/jpeg/home-projects-4-d.jpeg"
              data-title="The Spring Valley Spa">
           <picture>
             <source media="(max-width:600px)"
-                    srcset="images/assets/gallery/spring-valley-spa-m.webp">
+                    srcset="images/home/webp/home-projects-4-m.webp">
             <source media="(min-width:601px)"
-                    srcset="images/assets/gallery/spring-valley-spa.webp">
-            <img src="images/assets/gallery/spring-valley-spa.jpg"
+                    srcset="images/home/webp/home-projects-4-d.webp">
+            <img src="images/home/jpeg/home-projects-4-d.jpeg"
                  alt="The Spring Valley Spa — Spring Valley, TX"
                  width="360" height="440"
                  loading="lazy" decoding="async">
@@ -1288,12 +1303,12 @@
   <!-- Background image -->
   <picture class="testimonials-bg">
     <source media="(max-width: 600px)"
-            srcset="images/backgrounds/testimonials-m.webp">
+            srcset="images/home/webp/home-testimonial-m.webp">
     <source media="(min-width: 601px)"
-            srcset="images/backgrounds/testimonials.webp">
+            srcset="images/home/webp/home-testimonial-d.webp">
     <img
       aria-hidden="true"
-      src="images/backgrounds/testimonials.jpg"
+      src="images/home/jpeg/home-testimonial-d.jpeg"
       alt=""
       width="1920"
       height="700"
@@ -1811,11 +1826,11 @@
       <div class="faq-img-col reveal fade-left">
         <picture class="faq-img-wrap">
           <source media="(max-width: 600px)"
-                  srcset="images/assets/faq-m.webp">
+                  srcset="images/home/webp/faq-img-m.webp">
           <source media="(min-width: 601px)"
-                  srcset="images/assets/faq.webp">
+                  srcset="images/home/webp/faq-img-d.webp">
           <img
-            src="images/assets/faq.jpg"
+            src="images/home/jpeg/faq-img-d.jpeg"
             alt="Meridian Pools team consulting with homeowners"
             width="560"
             height="680"
@@ -1847,11 +1862,11 @@
 
       <picture class="cta-final-img-wrap">
         <source media="(max-width: 600px)"
-                srcset="images/assets/cta-final-m.webp">
+                srcset="images/home/webp/final-cta-m.webp">
         <source media="(min-width: 601px)"
-                srcset="images/assets/cta-final.webp">
+                srcset="images/home/webp/final-cta-d.webp">
         <img
-          src="images/assets/cta-final.jpg"
+          src="images/home/jpeg/final-cta-d.jpeg"
           alt="Meridian Pools craftsman finishing pool coping"
           width="480"
           height="560"

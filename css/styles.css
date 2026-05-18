@@ -2439,3 +2439,37 @@
     font-size: var(--fs-body-lg);
   }
 }
+
+
+
+/* ── Hero Pricing Badges ─────────────────────────────────────────────────── */
+/* Add to styles.css in the hero section */
+
+.hero-pricing-note {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.hero-pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 99px;
+  padding: 0.35rem 0.875rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.hero-pricing-badge svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: var(--blue);
+  flex-shrink: 0;
+}
