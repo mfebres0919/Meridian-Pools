@@ -567,10 +567,12 @@
 /* ── Card bottom — image + checklist + button ────────────────────────────── */
 .story-card-bottom {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: end; /* change from center to end */
   gap: var(--space-lg);
 }
+
+
 
 .story-card-btn {
   align-self: end; /* anchors to bottom right */
