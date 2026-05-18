@@ -3,25 +3,23 @@
    Handles:
    - Category filter tabs (All / Custom / Renovation / Luxury)
    - Mobile carousel prev/next
-   - Lightbox open/close
+   - Homepage lightbox (uses data-img attribute)
+   - Gallery page filter tabs + lightbox
    Loads on: index.html + gallery.html
 ============================================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ===========================================================================
-     FILTER TABS
+     FILTER TABS — Homepage projects section
   =========================================================================== */
 
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterBtns   = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
   if (filterBtns.length && projectCards.length) {
-
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-
-        // Update active state
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (show) {
             card.classList.remove('hidden');
-            // Stagger fade-in
             setTimeout(() => {
               card.style.opacity = '1';
               card.style.transform = 'translateY(0)';
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        // Reset mobile carousel position on filter change
         const grid = document.getElementById('projectsGrid');
         if (grid) grid.style.transform = 'translateX(0)';
         mobileIndex = 0;
@@ -95,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ===========================================================================
-     LIGHTBOX
+     LIGHTBOX — Homepage (uses data-img for correct full-size path)
   =========================================================================== */
 
   const lightbox      = document.getElementById('lightbox');
@@ -103,59 +99,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxCap   = document.getElementById('lightboxCaption');
   const lightboxClose = document.getElementById('lightboxClose');
 
-  if (!lightbox) return;
+  if (lightbox) {
+    const openLightbox = (imgSrc, title) => {
+      lightboxImg.src = imgSrc;
+      lightboxImg.alt = title;
+      if (lightboxCap) lightboxCap.textContent = title;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
 
-  const openLightbox = (imgSrc, title) => {
-    lightboxImg.src = imgSrc;
-    lightboxImg.alt = title;
-    lightboxCap.textContent = title;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 300);
+    };
 
-  const closeLightbox = () => {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-    // Clear src after transition so no flash on reopen
-    setTimeout(() => { lightboxImg.src = ''; }, 300);
-  };
-
-  // Open on card click
-  projectCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const imgSrc = card.dataset.img;
-      const title  = card.dataset.title;
-      if (imgSrc) openLightbox(imgSrc, title);
+    // Use data-img attribute — set on each project card in HTML
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const imgSrc = card.dataset.img;
+        const title  = card.dataset.title || '';
+        if (imgSrc) openLightbox(imgSrc, title);
+      });
     });
-  });
 
-  // Close on X button
-  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
 
-  // Close on backdrop click (outside image)
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
 
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-
-});
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  }
 
 
+  /* ===========================================================================
+     GALLERY PAGE — Filter tabs + lightbox
+  =========================================================================== */
 
-/* =============================================================================
-   MERIDIAN POOLS — gallery-filter.js
-   Gallery page filter tabs + lightbox.
-   Also used by homepage projects section lightbox.
-   Loads on: gallery.html + index.html
-============================================================================= */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ── Gallery page filter tabs ────────────────────────────────────────────── */
   const galTabs  = document.querySelectorAll('.gal-tab');
   const galItems = document.querySelectorAll('.gal-item');
 
@@ -183,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Gallery lightbox ────────────────────────────────────────────────────── */
   const galLightbox      = document.getElementById('galLightbox');
   const galLightboxImg   = document.getElementById('galLightboxImg');
   const galLightboxCap   = document.getElementById('galLightboxCaption');
@@ -198,8 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!img) return;
 
-        galLightboxImg.src     = img.src;
-        galLightboxImg.alt     = img.alt;
+        galLightboxImg.src         = img.src;
+        galLightboxImg.alt         = img.alt;
         galLightboxCap.textContent = location ? `${title} — ${location}` : title;
 
         galLightbox.classList.add('open');
@@ -212,67 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
     };
 
-    if (galLightboxClose) {
-      galLightboxClose.addEventListener('click', closeGalLightbox);
-    }
+    if (galLightboxClose) galLightboxClose.addEventListener('click', closeGalLightbox);
 
     galLightbox.addEventListener('click', (e) => {
       if (e.target === galLightbox) closeGalLightbox();
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && galLightbox.classList.contains('open')) {
-        closeGalLightbox();
-      }
-    });
-  }
-
-  /* ── Homepage projects lightbox (index.html) ─────────────────────────────── */
-  const homeLightbox      = document.getElementById('lightbox');
-  const homeLightboxImg   = document.getElementById('lightboxImg');
-  const homeLightboxClose = document.querySelector('.lightbox-close');
-
-  if (homeLightbox) {
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const img  = card.querySelector('img');
-        const h4   = card.querySelector('h4');
-        const p    = card.querySelector('p');
-
-        if (!img || !homeLightboxImg) return;
-
-        homeLightboxImg.src = img.src;
-        homeLightboxImg.alt = img.alt;
-
-        const cap = document.querySelector('.lightbox-caption');
-        if (cap) {
-          cap.textContent = h4 && p
-            ? `${h4.textContent} — ${p.textContent}`
-            : img.alt;
-        }
-
-        homeLightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    const closeHomeLightbox = () => {
-      homeLightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    };
-
-    if (homeLightboxClose) {
-      homeLightboxClose.addEventListener('click', closeHomeLightbox);
-    }
-
-    homeLightbox.addEventListener('click', (e) => {
-      if (e.target === homeLightbox) closeHomeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && homeLightbox.classList.contains('open')) {
-        closeHomeLightbox();
-      }
+      if (e.key === 'Escape' && galLightbox.classList.contains('open')) closeGalLightbox();
     });
   }
 
