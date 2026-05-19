@@ -137,30 +137,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const itemMaterial = item.dataset.material || '';
       const itemAddons   = (item.dataset.addons  || '').split(',').map(a => a.trim());
 
-      // Score: 1 point per matching active category
-      let score = 0;
+      // AND logic — type, style, material must all match strictly
+      const typeMatch     = !state.type.length     || state.type.includes(itemType);
+      const styleMatch    = !state.style.length    || state.style.includes(itemStyle);
+      const materialMatch = !state.material.length || state.material.includes(itemMaterial);
 
-      if (state.type.length && state.type.includes(itemType))             score++;
-      if (state.style.length && state.style.includes(itemStyle))           score++;
-      if (state.material.length && state.material.includes(itemMaterial))  score++;
-      // Add-ons: 1 point if ANY selected addon matches
-      if (state.addon.length && state.addon.some(a => itemAddons.includes(a))) score++;
+      // Add-ons are soft — they sort results when combined with other filters,
+      // but filter strictly when selected alone
+      const hardFiltersActive = state.type.length || state.style.length || state.material.length;
+      const addonMatch  = !state.addon.length || state.addon.some(a => itemAddons.includes(a));
+      const addonScore  = state.addon.length ? state.addon.filter(a => itemAddons.includes(a)).length : 0;
 
-      item.dataset.score = score;
+      const isMatch = typeMatch && styleMatch && materialMatch &&
+                      (hardFiltersActive ? true : addonMatch);
 
-      if (score > 0) {
+      if (isMatch) {
         item.classList.remove('hidden');
-        scoredItems.push({ el: item, score });
+        scoredItems.push({ el: item, addonScore });
       } else {
         item.classList.add('hidden');
         item.classList.remove('span-full');
       }
     });
 
-    // Sort visible items by score descending — best matches first
-    if (hasFilters) {
-      scoredItems.sort((a, b) => b.score - a.score);
-      // Re-append in sorted order so DOM reflects ranking
+    // Sort by addon score — images with matching add-ons float to the top
+    if (hasFilters && state.addon.length) {
+      scoredItems.sort((a, b) => (b.addonScore || 0) - (a.addonScore || 0));
       scoredItems.forEach(({ el }) => gallery.appendChild(el));
     }
 
