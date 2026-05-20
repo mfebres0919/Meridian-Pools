@@ -88,7 +88,7 @@
   position: relative;
   background-color: var(--bg-100);
   border-radius: var(--radius-card);
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -173,7 +173,7 @@
   font-size: var(--fs-body-sm);
   font-weight: 700;
   letter-spacing: var(--ls-heading);
-  color: var(--bg-600);
+  color: var(--text-100);
   text-decoration: none;
   text-transform: uppercase;
   margin-top: var(--space-xs);
@@ -182,6 +182,22 @@
 
 .wwd-card:hover .wwd-view-details {
   color: var(--white);
+}
+
+/* ── View details overlay on image ───────────────────────────────────────── */
+/* Position the button absolute inside wwd-card-img */
+.wwd-card-img {
+  position: relative;
+}
+
+.wwd-card-img .wwd-view-details {
+  position: absolute;
+  top: 1rem;
+  left: .6rem;
+  margin-top: 0;
+  z-index: 2;
+  padding: 0.4rem 0.75rem;
+  border-radius: 99px;
 }
 
 /* ── Circle arrow icon ───────────────────────────────────────────────────── */
@@ -217,20 +233,14 @@
   margin-top: auto;
 }
 
+/* PNG images have shape baked in — display naturally, no cropping */
 .wwd-card-img picture,
 .wwd-card-img img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
   display: block;
-}
-
-@media (min-width: 1025px) {
-  .wwd-card-img picture,
-  .wwd-card-img img {
-    height: 260px;
-  }
+  object-fit: unset;
+  padding: .5rem;
 }
 
 
@@ -528,6 +538,35 @@
   background-color: var(--bg-400);
   padding: 0; /* section handles its own padding via children */
   overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Background image */
+.why-renovate-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.why-renovate-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Dark overlay so text stays readable */
+#why-renovate::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(9, 22, 45, 0.90) 0%,
+    rgba(9, 22, 45, 0.80) 100%
+  );
+  z-index: -1;
 }
 
 /* ── Stat bar — top strip ────────────────────────────────────────────────── */

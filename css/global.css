@@ -526,3 +526,17 @@ p.lead {
   border-color: var(--blue) !important;
   color: var(--white);
 }
+
+
+/* =============================================================================
+   08 — ICON COLOR
+   Forces inline SVG icons to render in primary brand blue.
+   Applies to FAQ icons, Why Us card icons, and calculator option icons.
+============================================================================= */
+
+.faq-icon svg,
+.why-card-icon svg,
+.calc-option-icon svg {
+  color: var(--blue);
+  stroke: var(--blue);
+}
