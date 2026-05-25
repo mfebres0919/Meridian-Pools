@@ -69,11 +69,11 @@
 
 @media (min-width: 1025px) {
   .hero-inner {
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 2fr 420px;
     align-items: center;
-    gap: var(--space-3xl);
-    padding-block: var(--space-4xl);
+    margin: 0rem 10rem 0rem 10rem;
   }
+
 }
 
 /* ── Left column ─────────────────────────────────────────────────────────── */
@@ -86,7 +86,7 @@
 
 @media (min-width: 1025px) {
   .hero-content {
-    max-width: 680px;
+    max-width: 780px;
   }
 }
 
