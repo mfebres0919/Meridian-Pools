@@ -67,7 +67,7 @@
   width: 100%;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1225px) {
   .hero-inner {
     grid-template-columns: 2fr 420px;
     align-items: center;
